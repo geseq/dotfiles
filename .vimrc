@@ -52,6 +52,13 @@ set showcmd
 " Set leader to dot(.)
 let mapleader = ","
 
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-F> :Rg<CR>
+nnoremap <silent> <C-f> :BLines<CR>
+
+
+" Don't search file names with rg
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
@@ -67,17 +74,6 @@ autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " Control all other files
 set shiftwidth=4
-
-" Strip trailing whitespace (,ss)
-function! StripWhitespace()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
-endfunction
-noremap <leader>ss :call StripWhitespace()<CR>
-
 
 " Hardcore mode, disable arrow keys.
 noremap <Up> <NOP>
@@ -169,7 +165,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " Show fzf at the bottom
-let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_layout = { 'down': '~30%' }
 
 " Enable per-command history
 " - History files will be stored in the specified directory
