@@ -53,9 +53,8 @@ set showcmd
 let mapleader = ","
 
 nnoremap <silent> <C-p> :Files<CR>
-nnoremap <silent> <C-F> :Rg<CR>
+nnoremap <silent> <C-g> :Rg<CR>
 nnoremap <silent> <C-f> :BLines<CR>
-
 
 " Don't search file names with rg
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
@@ -109,11 +108,6 @@ let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
 
-
-"
-" NERDTree plugin specific commands
-:nnoremap <C-g> :NERDTreeToggle<CR>
-"autocmd vimenter * NERDTree
 
 
 " air-line plugin specific commands
