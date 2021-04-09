@@ -1,0 +1,11 @@
+.DS_Store
+.DS_Store?
+
+backups/
+swaps/
+undos/
+
+# Temporary
+.netrwhist
+*~
+
