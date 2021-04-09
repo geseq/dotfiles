@@ -9,6 +9,8 @@ set number
 set wildmenu
 " Allow cursor keys in insert mode
 set esckeys
+" Hide unsaved changes instead of closing them
+set hidden
 " Allow backspace to delete indentation and inserted text
 " i.e. how it works in most programs
 set backspace=indent,eol,start
@@ -56,6 +58,7 @@ nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <C-g> :Rg<CR>
 nnoremap <silent> <C-f> :BLines<CR>
 
+
 " Don't search file names with rg
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
@@ -66,7 +69,6 @@ set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undos
 
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 " ts - show existing tab with 4 spaces width
 " sw - when indenting with '>', use 4 spaces width
 " sts - control <tab> and <bs> keys to match tabstop
@@ -83,7 +85,6 @@ noremap <Right> <NOP>
 filetype plugin indent on
 
 
-
 " GO 
 "
 
@@ -95,7 +96,8 @@ let g:go_fmt_command = "goimports"
 " Status line types/signatures.
 let g:go_auto_type_info = 1
 
-"au filetype go inoremap <buffer> . .<C-x><C-o>
+autocmd Filetype go inoremap <buffer> . .<C-x><C-o>
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " If you want to disable gofmt on save
 " let g:go_fmt_autosave = 0
@@ -106,7 +108,6 @@ let g:go_auto_type_info = 1
 "
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
-
 
 
 
@@ -166,4 +167,3 @@ let g:fzf_layout = { 'down': '~30%' }
 " - When set, CTRL-N and CTRL-P will be bound to 'next-history' and
 "   'previous-history' instead of 'down' and 'up'.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
