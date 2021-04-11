@@ -21,7 +21,6 @@ cp ./.vimrc ~/
 
 # Install plugins
 
-
 # install fzf.vim
 rm -rf  ~/.vim/pack/plugins/start/fzf.vim
 git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/plugins/start/fzf.vim
@@ -46,6 +45,14 @@ git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/star
 rm -rf  ~/.vim/pack/plugins/start/vim-vinegar
 git clone https://github.com/tpope/vim-vinegar.git ~/.vim/pack/plugins/start/vim-vinegar
 
+# install vim-mucomplete
+rm -rf  ~/.vim/pack/plugins/start/vim-mucomplete
+git clone https://github.com/lifepillar/vim-mucomplete.git ~/.vim/pack/plugins/start/vim-mucomplete
+
+# install languageclient-neovim
+rm -rf  ~/.vim/pack/plugins/start/languageclient-neovim
+git clone https://github.com/autozimu/Languageclient-neovim.git ~/.vim/pack/plugins/start/languageclient-neovim
+(cd ~/.vim/pack/plugins/start/languageclient-neovim && bash install.sh)
 
 # Install coloe schemes
 

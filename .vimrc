@@ -123,6 +123,13 @@ let g:netrw_liststyle = 3
 
 
 
+" Mucomplete
+set completeopt+=menuone
+set completeopt+=noselect
+set shortmess+=c
+let g:mucomplete#enable_auto_at_startup = 1
+
+
 
 " Colorscheme
 set t_Co=256
