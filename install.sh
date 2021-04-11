@@ -18,14 +18,21 @@ mkdir ~/.vim/undos
 
 cp ./.vimrc ~/
 
-# Install vim-fugitive
-rm -rf  ~/.vim/pack/plugins/start/vim-fugitive
-git clone https://github.com/tpope/vim-fugitive.git ~/.vim/pack/plugins/start/vim-fugitive
 
+# Install plugins
+
+
+# install fzf.vim
+rm -rf  ~/.vim/pack/plugins/start/fzf.vim
+git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/plugins/start/fzf.vim
 
 # install vim-airline
 rm -rf  ~/.vim/pack/plugins/start/vim-airline
 git clone https://github.com/vim-airline/vim-airline.git ~/.vim/pack/plugins/start/vim-airline
+
+# Install vim-fugitive
+rm -rf  ~/.vim/pack/plugins/start/vim-fugitive
+git clone https://github.com/tpope/vim-fugitive.git ~/.vim/pack/plugins/start/vim-fugitive
 
 # install vim-go
 rm -rf  ~/.vim/pack/plugins/start/vim-go
@@ -34,6 +41,13 @@ git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 # install vim-terraform
 rm -rf  ~/.vim/pack/plugins/start/vim-terraform
 git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/vim-terraform
+
+# install vim-vinegar
+rm -rf  ~/.vim/pack/plugins/start/vim-vinegar
+git clone https://github.com/tpope/vim-vinegar.git ~/.vim/pack/plugins/start/vim-vinegar
+
+
+# Install coloe schemes
 
 # Install PaperColor
 mkdir -p ~/.vim/colors
