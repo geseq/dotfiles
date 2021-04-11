@@ -145,6 +145,12 @@ let g:netrw_liststyle = 3
 " Disable banner
 let g:netrw_banner = 0
 
+" Sort fix from https://github.com/tpope/vim-vinegar
+function! s:sort_sequence(suffixes) abort
+  return '[\/]$,*' . (empty(a:suffixes) ? '' : ',\%(' .
+        \ join(map(split(a:suffixes, ','), 'escape(v:val, ".*$~")'), '\|') . '\)[*@]\=$')
+endfunction
+let g:netrw_sort_sequence = s:sort_sequence(&suffixes)
 
 
 " Mucomplete
