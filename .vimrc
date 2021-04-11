@@ -57,13 +57,6 @@ set showcmd
 set splitbelow
 set splitright
 
-" Window movement with Ctrl+(hjkl)
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-
 " Disable modelines as a security precaution
 set modelines=0
 set nomodeline
@@ -87,11 +80,14 @@ set undodir=~/.vim/undos
 " Update find path to search subdirectories
 set path=$PWD/**
 
-" Remap escape
-inoremap jk <Esc>
-
 " Set leader to dot(.)
 let mapleader = ","
+
+" Window movement with Ctrl+(hjkl)
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Look for files with FZF on Ctrl+p
 nnoremap <silent> <C-p> :Files<CR>
@@ -101,8 +97,8 @@ nnoremap <silent> <C-g> :Rg<CR>
 nnoremap <silent> <C-f> :BLines<CR>
 " Open buffer list ready to fill in on ,b
 nnoremap <Leader>b :ls<Cr>:b<Space>
-" Double esc to escape from terminal buffer
-tnoremap <silent> <C-[><C-[> <C-\><C-n>
+" Remap escape to jk
+inoremap jk <Esc>
 
 
 " Don't search file names with rg
