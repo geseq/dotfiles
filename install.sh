@@ -13,6 +13,7 @@ elif [[ $machine == "Linux" ]]; then
     sudo apt -y install fzf ripgrep
 fi
 
+rm -rf ~/.vim
 mkdir -p ~/.vim/pack/plugins/start
 mkdir ~/.vim/undos
 
@@ -28,10 +29,6 @@ git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/plugins/start/fzf.
 # install vim-airline
 rm -rf  ~/.vim/pack/plugins/start/vim-airline
 git clone https://github.com/vim-airline/vim-airline.git ~/.vim/pack/plugins/start/vim-airline
-
-# Install vim-fugitive
-rm -rf  ~/.vim/pack/plugins/start/vim-fugitive
-git clone https://github.com/tpope/vim-fugitive.git ~/.vim/pack/plugins/start/vim-fugitive
 
 # install vim-go
 rm -rf  ~/.vim/pack/plugins/start/vim-go

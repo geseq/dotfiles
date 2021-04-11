@@ -83,6 +83,8 @@ nnoremap <silent> <C-g> :Rg<CR>
 nnoremap <silent> <C-f> :BLines<CR>
 " Open buffer list ready to fill in on ,b
 nnoremap <Leader>b :ls<Cr>:b<Space>
+" Double esc to escape from terminal buffer
+tnoremap <silent> <C-[><C-[> <C-\><C-n>
 
 
 " Don't search file names with rg
