@@ -26,6 +26,8 @@ set visualbell
 set encoding=utf-8 nobomb
 " Set the encoding of files written
 set fileencoding=utf-8
+" Set file format
+set ffs=unix,dos,mac
 
 " Enable syntax highlighting
 syntax on
@@ -51,6 +53,25 @@ set title
 " Show the (partial) command as it’s being typed
 set showcmd
 
+" No backups or swap
+set nobackup
+set nowritebackup
+set nowb
+set noswapfile
+
+" Large undo history
+set undolevels=1000
+" Centralize undo history
+set undofile " Maintain undo history between sessions
+set undodir=~/.vim/undos
+
+
+" Update find path to search subdirectories
+set path=$PWD/**
+
+" Remap escape
+inoremap jk <Esc>
+
 " Set leader to dot(.)
 let mapleader = ","
 
@@ -62,19 +83,27 @@ nnoremap <silent> <C-f> :BLines<CR>
 " Don't search file names with rg
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
-" Centralize backups, swapfiles and undo history
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-set undofile " Maintain undo history between sessions
-set undodir=~/.vim/undos
-
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-" ts - show existing tab with 4 spaces width
-" sw - when indenting with '>', use 4 spaces width
-" sts - control <tab> and <bs> keys to match tabstop
-
-" Control all other files
+" Tab sanity
+set expandtab
+set tabstop=4
 set shiftwidth=4
+
+" Show hidden characters, tabs, trailing whitespace
+set list
+set listchars=tab:→\ ,trail:·,nbsp:·
+
+" Different tab/space stops"
+autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype scss setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType make setlocal noexpandtab
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype tf setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
 
 " Hardcore mode, disable arrow keys.
 noremap <Up> <NOP>
@@ -83,6 +112,29 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 filetype plugin indent on
+
+
+
+" Netrw
+"
+
+" Set treeview as default
+let g:netrw_liststyle = 3
+
+
+
+
+" Colorscheme
+set t_Co=256
+set background=dark
+
+colorscheme PaperColor
+
+set colorcolumn=80,100
+
+highlight ColorColumn ctermbg=238 guibg=#232728
+
+
 
 
 " GO 
@@ -97,7 +149,6 @@ let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 
 autocmd Filetype go inoremap <buffer> . .<C-x><C-o>
-autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " If you want to disable gofmt on save
 " let g:go_fmt_autosave = 0
