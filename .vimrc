@@ -131,6 +131,12 @@ let g:mucomplete#enable_auto_at_startup = 1
 
 
 
+" Languageclient-neovim
+nmap <silent>K <Plug>(lcn-hover)
+nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> <F2> <Plug>(lcn-rename)
+
+
 " Colorscheme
 set t_Co=256
 set background=dark
