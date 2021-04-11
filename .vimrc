@@ -75,9 +75,14 @@ inoremap jk <Esc>
 " Set leader to dot(.)
 let mapleader = ","
 
+" Look for files with FZF on Ctrl+p
 nnoremap <silent> <C-p> :Files<CR>
+" Search all file contents with  ripgrep on Ctrl+g
 nnoremap <silent> <C-g> :Rg<CR>
+" Search within file with FZF on Ctrl+f
 nnoremap <silent> <C-f> :BLines<CR>
+" Open buffer list ready to fill in on ,b
+nnoremap <Leader>b :ls<Cr>:b<Space>
 
 
 " Don't search file names with rg
