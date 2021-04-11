@@ -99,7 +99,8 @@ nnoremap <silent> <C-f> :BLines<CR>
 nnoremap <Leader>b :ls<Cr>:b<Space>
 " Remap escape to jk
 inoremap jk <Esc>
-
+" Open Netrw for file browsing with dash(-)
+nnoremap <silent> - :Explore<CR>
 
 " Don't search file names with rg
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
@@ -141,6 +142,8 @@ filetype plugin indent on
 
 " Set treeview as default
 let g:netrw_liststyle = 3
+" Disable banner
+let g:netrw_banner = 0
 
 
 
