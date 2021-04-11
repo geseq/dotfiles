@@ -53,6 +53,24 @@ set title
 " Show the (partial) command as it’s being typed
 set showcmd
 
+" Split below and to the right by default
+set splitbelow
+set splitright
+
+" Window movement with Ctrl+(hjkl)
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+
+" Disable modelines as a security precaution
+set modelines=0
+set nomodeline
+
+" Automatically :write before running commands
+set autowrite
+
 " No backups or swap
 set nobackup
 set nowritebackup
