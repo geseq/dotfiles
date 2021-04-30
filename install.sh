@@ -33,6 +33,7 @@ git clone https://github.com/vim-airline/vim-airline.git ~/.vim/pack/plugins/sta
 # install vim-go
 rm -rf  ~/.vim/pack/plugins/start/vim-go
 git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+vim +GoInstallBinaries +qall 
 
 # install vim-terraform
 rm -rf  ~/.vim/pack/plugins/start/vim-terraform
@@ -56,5 +57,3 @@ git clone https://github.com/autozimu/Languageclient-neovim.git ~/.vim/pack/plug
 # Install PaperColor
 mkdir -p ~/.vim/colors
 curl -o ~/.vim/colors/PaperColor.vim https://raw.githubusercontent.com/NLKNguyen/papercolor-theme/master/colors/PaperColor.vim
-
-echo "Run :GoInstallBinaries to install go binaries for vim-go"
