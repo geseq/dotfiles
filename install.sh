@@ -13,12 +13,20 @@ elif [[ $machine == "Linux" ]]; then
     sudo apt -y install fzf ripgrep
 fi
 
-rm -rf ~/.vim
+echo "Backing up ~/.vimrc to ~/.vimrc.bak"
+mv ~/.vimrc ~/.vimrc.bak
+
+echo "Backing up ~/.vim to ~/.vim.bak"
+mv ~/.vim ~/.vim.bak
+
 mkdir -p ~/.vim/pack/plugins/start
 mkdir ~/.vim/undos
 
-cp ./.vimrc ~/
+# Install color schemes
 
+# Install PaperColor
+mkdir -p ~/.vim/colors
+curl -o ~/.vim/colors/PaperColor.vim https://raw.githubusercontent.com/NLKNguyen/papercolor-theme/master/colors/PaperColor.vim
 
 # Install plugins
 
@@ -52,8 +60,4 @@ rm -rf  ~/.vim/pack/plugins/start/languageclient-neovim
 git clone https://github.com/autozimu/Languageclient-neovim.git ~/.vim/pack/plugins/start/languageclient-neovim
 (cd ~/.vim/pack/plugins/start/languageclient-neovim && bash install.sh)
 
-# Install coloe schemes
-
-# Install PaperColor
-mkdir -p ~/.vim/colors
-curl -o ~/.vim/colors/PaperColor.vim https://raw.githubusercontent.com/NLKNguyen/papercolor-theme/master/colors/PaperColor.vim
+cp ./.vimrc ~/
