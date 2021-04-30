@@ -142,8 +142,6 @@ filetype plugin indent on
 
 " Set treeview as default
 let g:netrw_liststyle = 3
-" Disable banner
-let g:netrw_banner = 0
 
 " Sort fix from https://github.com/tpope/vim-vinegar
 function! s:sort_sequence(suffixes) abort
