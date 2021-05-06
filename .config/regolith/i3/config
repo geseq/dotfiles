@@ -655,3 +655,20 @@ set_from_resource $i3-wm.program.2 i3-wm.program.2 :
 exec --no-startup-id $i3-wm.program.2
 set_from_resource $i3-wm.program.3 i3-wm.program.3 :
 exec --no-startup-id $i3-wm.program.3
+
+###############################################################################
+# Common mac key bindings
+###############################################################################
+
+bindsym --release $alt+x exec xdotool key --clearmodifiers ctrl+x
+bindsym --release $alt+c exec xdotool key --clearmodifiers ctrl+c
+bindsym --release $alt+v exec xdotool key --clearmodifiers ctrl+v
+bindsym --release $alt+z exec xdotool key --clearmodifiers ctrl+z
+bindsym --release $alt+p exec xdotool key --clearmodifiers ctrl+p
+bindsym --release $alt+a exec xdotool key --clearmodifiers ctrl+a
+bindsym --release $alt+s exec xdotool key --clearmodifiers ctrl+s
+bindsym --release $alt+t exec xdotool key --clearmodifiers ctrl+t
+bindsym --release $alt+w exec xdotool key --clearmodifiers ctrl+w
+bindsym --release $alt+n exec xdotool key --clearmodifiers ctrl+n
+bindsym --release $alt+q exec xdotool key --clearmodifiers ctrl+q
+bindsym --release $alt+f exec xdotool key --clearmodifiers ctrl+f
