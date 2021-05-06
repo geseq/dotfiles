@@ -1,6 +1,7 @@
 syntax on
 colo pablo
 set colorcolumn=80,100
+highlight ColorColumn ctermbg=7
 
 " Start
 set nocompatible
