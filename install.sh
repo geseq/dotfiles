@@ -61,3 +61,4 @@ git clone https://github.com/autozimu/Languageclient-neovim.git ~/.vim/pack/plug
 (cd ~/.vim/pack/plugins/start/languageclient-neovim && bash install.sh)
 
 cp ./.vimrc ~/
+cp -r ./.config/* ~/.config
