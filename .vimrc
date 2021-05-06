@@ -1,3 +1,4 @@
+" Enable syntax highlighting 
 syntax on
 colo pablo
 set colorcolumn=80,100
@@ -30,9 +31,6 @@ set encoding=utf-8 nobomb
 set fileencoding=utf-8
 " Set file format
 set ffs=unix,dos,mac
-
-" Enable syntax highlighting
-syntax on
 
 " Highlight current line
 set cursorline
