@@ -1,5 +1,6 @@
 syntax on
 colo pablo
+set colorcolumn=80,100
 
 " Start
 set nocompatible
@@ -83,11 +84,11 @@ set path=$PWD/**
 " Set leader to dot(.)
 let mapleader = ","
 
-" Remap hjkl to jkl;                                                                                
-noremap ; l                                                                                         
-noremap l k                                                                                         
-noremap k j                                                                                         
-noremap j h                                                                                         
+" Remap hjkl to jkl;
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
 
 " Window movement with Ctrl+(hjkl)
 nnoremap <C-j> <C-w>j
@@ -107,9 +108,6 @@ nnoremap <Leader>b :ls<Cr>:b<Space>
 inoremap jk <Esc>
 " Open Netrw for file browsing with dash(-)
 nnoremap <silent> - :Explore<CR>
-
-" Don't search file names with rg
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " Tab sanity
 set expandtab
@@ -141,8 +139,6 @@ noremap <Right> <NOP>
 
 filetype plugin indent on
 
-
-
 " Netrw
 "
 
@@ -155,6 +151,12 @@ function! s:sort_sequence(suffixes) abort
         \ join(map(split(a:suffixes, ','), 'escape(v:val, ".*$~")'), '\|') . '\)[*@]\=$')
 endfunction
 let g:netrw_sort_sequence = s:sort_sequence(&suffixes)
+
+
+" --------------- PLUGIN CONFIG ---------------
+
+" Don't search file names with rg
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 
 " Mucomplete
@@ -174,15 +176,8 @@ nmap <silent> <F2> <Plug>(lcn-rename)
 " Colorscheme
 set t_Co=256
 set background=dark
-
 colorscheme PaperColor
-
-set colorcolumn=80,100
-
 highlight ColorColumn ctermbg=238 guibg=#232728
-
-
-
 
 " GO 
 "
