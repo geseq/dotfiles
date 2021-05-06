@@ -83,6 +83,12 @@ set path=$PWD/**
 " Set leader to dot(.)
 let mapleader = ","
 
+" Remap hjkl to jkl;                                                                                
+noremap ; l                                                                                         
+noremap l k                                                                                         
+noremap k j                                                                                         
+noremap j h                                                                                         
+
 " Window movement with Ctrl+(hjkl)
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
