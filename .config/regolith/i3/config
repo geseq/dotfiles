@@ -672,3 +672,4 @@ bindsym --release $alt+w exec xdotool key --clearmodifiers ctrl+w
 bindsym --release $alt+n exec xdotool key --clearmodifiers ctrl+n
 bindsym --release $alt+q exec xdotool key --clearmodifiers ctrl+q
 bindsym --release $alt+f exec xdotool key --clearmodifiers ctrl+f
+bindsym --release $alt+Shift+t exec xdotool key --clearmodifiers ctrl+shift+t
