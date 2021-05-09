@@ -60,5 +60,9 @@ rm -rf  ~/.vim/pack/plugins/start/languageclient-neovim
 git clone https://github.com/autozimu/Languageclient-neovim.git ~/.vim/pack/plugins/start/languageclient-neovim
 (cd ~/.vim/pack/plugins/start/languageclient-neovim && bash install.sh)
 
+# Install auto-pairs
+mkdir -p ~/.vim/plugin
+curl -o ~/.vim/plugin/auto-pairs.vim  https://raw.githubusercontent.com/jiangmiao/auto-pairs/master/plugin/auto-pairs.vim
+
 cp ./.vimrc ~/
 cp -r ./.config/* ~/.config
