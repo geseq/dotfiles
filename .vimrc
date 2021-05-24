@@ -81,13 +81,13 @@ set undodir=~/.vim/undos
 set path=$PWD/**
 
 " Set leader to dot(.)
-let mapleader = ","
+let mapleader = " "
 
 " Remap hjkl to jkl;
-noremap ; l
-noremap l k
-noremap k j
-noremap j h
+" noremap ; l
+" noremap l k
+" noremap k j
+" noremap j h
 
 " Window movement with Ctrl+(hjkl)
 nnoremap <C-j> <C-w>j
@@ -95,12 +95,21 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Look for files with FZF on Ctrl+p
+" Look for files with FZF on ff
 nnoremap <silent> <C-p> :Files<CR>
+map <silent> <leader>ff :Files<CR>
+" Look for gitfiles with fg
+map <silent> <leader>fg :GFiles<CR>
+" Show buffers with fb
+map <silent> <leader>fb :Buffers<CR>
+" Show tags with ft
+map <silent> <leader>ft :Tags<CR>
 " Search all file contents with  ripgrep on Ctrl+g
 nnoremap <silent> <C-g> :Rg<CR>
+map <silent> <leader>fa :Rg<CR>
 " Search within file with FZF on Ctrl+f
 nnoremap <silent> <C-f> :BLines<CR>
+map <silent> <leader>fs :BLines<CR>
 " Open buffer list ready to fill in on ,b
 nnoremap <Leader>b :ls<Cr>:b<Space>
 " Remap escape to jk
