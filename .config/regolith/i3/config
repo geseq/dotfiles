@@ -250,7 +250,7 @@ set_from_resource $i3-wm.binding.split_v i3-wm.binding.split_v v
 bindsym $mod+$i3-wm.binding.split_v split vertical
 
 ## Modify // Horizontal Window Orientation // <Alt> h ##
-set_from_resource $i3-wm.binding.split_h i3-wm.binding.split_h h
+set_from_resource $i3-wm.binding.split_h i3-wm.binding.split_h g
 bindsym $mod+$i3-wm.binding.split_h split horizontal
 
 ## Modify // Toggle Window Orientation // <Alt> Backspace ##
@@ -275,7 +275,9 @@ bindsym $mod+$i3-wm.binding.focus_toggle focus mode_toggle
 
 ## Modify // Window Layout Mode // <Alt> t ##
 set_from_resource $i3-wm.binding.layout_mode i3-wm.binding.layout_mode t
-bindsym $mod+$i3-wm.binding.layout_mode layout toggle tabbed splith splitv
+bindsym $mod+$i3-wm.binding.layout_mode layout toggle tabbed splith 
+
+v
 
 ## Modify // Move Window to Workspace 1 - 10 // <Alt><Shift> 0..9 ##
 bindsym $mod+Shift+$ws1_key move container to workspace number $ws1
