@@ -675,3 +675,6 @@ bindsym --release $alt+n exec xdotool key --clearmodifiers ctrl+n
 bindsym --release $alt+q exec xdotool key --clearmodifiers ctrl+q
 bindsym --release $alt+f exec xdotool key --clearmodifiers ctrl+f
 bindsym --release $alt+Shift+t exec xdotool key --clearmodifiers ctrl+shift+t
+
+bindsym $alt+Shift+3 exec flameshot gui -p ~/Desktop
+bindsym $alt+Shift+4 exec flameshot full -p ~/Desktop
