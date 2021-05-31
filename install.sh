@@ -65,4 +65,9 @@ mkdir -p ~/.vim/plugin
 curl -o ~/.vim/plugin/auto-pairs.vim  https://raw.githubusercontent.com/jiangmiao/auto-pairs/master/plugin/auto-pairs.vim
 
 cp ./.vimrc ~/
-cp -r ./.config/* ~/.config
+
+if [[ $machine == "Linux" ]]; then
+    cp -r ./.config/* ~/.config
+fi
+
+
