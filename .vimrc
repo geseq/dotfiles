@@ -238,9 +238,6 @@ let g:airline_symbols.whitespace = 'Ξ'
 " FZF
 "
 
-" If installed using Homebrew
-set rtp+=/usr/local/opt/fzf
-
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',

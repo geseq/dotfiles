@@ -67,8 +67,11 @@ curl -o ~/.vim/plugin/auto-pairs.vim  https://raw.githubusercontent.com/jiangmia
 
 cp ./.vimrc ~/
 
-if [[ $machine == "Linux" ]]; then
+if [[ $machine == "Mac" ]]; then
+    echo 'set rtp+=/usr/local/opt/fzf'>>~/.vimrc
+elif [[ $machine == "Linux" ]]; then
     cp -r ./.config/* ~/.config
+    echo 'source /usr/share/doc/fzf/examples/fzf.vim'>>~/.vimrc
 fi
 
 
