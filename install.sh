@@ -32,20 +32,16 @@ curl -o ~/.vim/colors/PaperColor.vim https://raw.githubusercontent.com/NLKNguyen
 # Install plugins
 
 # install fzf.vim
-rm -rf  ~/.vim/pack/plugins/start/fzf.vim
 git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/plugins/start/fzf.vim
 
 # install vim-airline
-rm -rf  ~/.vim/pack/plugins/start/vim-airline
 git clone https://github.com/vim-airline/vim-airline.git ~/.vim/pack/plugins/start/vim-airline
 
 # install vim-go
-rm -rf  ~/.vim/pack/plugins/start/vim-go
 git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 vim +GoInstallBinaries +qall 
 
 # install vim-terraform
-rm -rf  ~/.vim/pack/plugins/start/vim-terraform
 git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/vim-terraform
 
 # install vim-vinegar
@@ -53,13 +49,14 @@ git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/star
 # git clone https://github.com/tpope/vim-vinegar.git ~/.vim/pack/plugins/start/vim-vinegar
 
 # install vim-mucomplete
-rm -rf  ~/.vim/pack/plugins/start/vim-mucomplete
 git clone https://github.com/lifepillar/vim-mucomplete.git ~/.vim/pack/plugins/start/vim-mucomplete
 
 # install languageclient-neovim
-rm -rf  ~/.vim/pack/plugins/start/languageclient-neovim
 git clone https://github.com/autozimu/Languageclient-neovim.git ~/.vim/pack/plugins/start/languageclient-neovim
 (cd ~/.vim/pack/plugins/start/languageclient-neovim && bash install.sh)
+
+# install vim-autoformat
+git clone https://github.com/vim-autoformat/vim-autoformat.git ~/.vim/pack/plugins/start/vim-autoformat
 
 # Install auto-pairs
 mkdir -p ~/.vim/plugin

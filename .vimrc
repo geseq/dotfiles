@@ -265,3 +265,9 @@ let g:fzf_layout = { 'down': '~30%' }
 " - When set, CTRL-N and CTRL-P will be bound to 'next-history' and
 "   'previous-history' instead of 'down' and 'up'.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+
+
+" Autoformat
+let g:python3_host_prog='/usr/bin/python3'
+noremap <Leader>af :Autoformat<CR>
