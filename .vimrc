@@ -8,6 +8,8 @@ highlight ColorColumn ctermbg=7
 set nocompatible
 " Add line numbers
 set number
+" Disable line wrap
+set nowrap
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode
