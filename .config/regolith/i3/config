@@ -401,11 +401,6 @@ set_from_resource $i3-wm.binding.display i3-wm.binding.display d
 set_from_resource $i3-wm.program.display i3-wm.program.display gnome-control-center --class=floating_window display
 bindsym $mod+$i3-wm.binding.display exec $i3-wm.program.display
 
-## Modify // Wifi Settings // <Alt> w ##
-set_from_resource $i3-wm.binding.wifi i3-wm.binding.wifi w
-set_from_resource $i3-wm.program.wifi i3-wm.program.wifi gnome-control-center --class=floating_window wifi
-bindsym $mod+$i3-wm.binding.wifi exec $i3-wm.program.wifi
-
 ## Modify // Bluetooth Settings // <Alt> b ##
 set_from_resource $i3-wm.binding.bluetooth i3-wm.binding.bluetooth b
 set_from_resource $i3-wm.program.bluetooth i3-wm.program.bluetooth gnome-control-center --class=floating_window bluetooth
