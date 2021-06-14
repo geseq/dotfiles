@@ -124,7 +124,7 @@ bindsym $alt+$i3-wm.binding.look_selector exec $i3-wm.program.look_selector
 ###############################################################################
 
 ## Navigate // Relative Parent // <Alt> a ##/
-set_from_resource $i3-wm.binding.focus_parent i3-wm.binding.focus_parent a
+set_from_resource $i3-wm.binding.focus_parent i3-wm.binding.focus_parent p
 bindsym $mod+$i3-wm.binding.focus_parent focus parent
 
 ## Navigate // Relative Child // <Alt> z ##/
@@ -245,11 +245,11 @@ bindsym $mod+$i3-wm.binding.take_down move workspace to output down
 bindsym $mod+$i3-wm.binding.take_up move workspace to output up
 bindsym $mod+$i3-wm.binding.take_right move workspace to output right
 
-## Modify // Vertical Window Orientation // <Alt> v ##
-set_from_resource $i3-wm.binding.split_v i3-wm.binding.split_v v
+## Modify // Vertical Window Orientation // <Alt> w ##
+set_from_resource $i3-wm.binding.split_v i3-wm.binding.split_v w
 bindsym $mod+$i3-wm.binding.split_v split vertical
 
-## Modify // Horizontal Window Orientation // <Alt> h ##
+## Modify // Horizontal Window Orientation // <Alt> g ##
 set_from_resource $i3-wm.binding.split_h i3-wm.binding.split_h g
 bindsym $mod+$i3-wm.binding.split_h split horizontal
 
