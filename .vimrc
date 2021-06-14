@@ -1,4 +1,4 @@
-" Enable syntax highlighting 
+" Enable syntax highlighting
 syntax on
 colo pablo
 set colorcolumn=80,100
@@ -99,13 +99,13 @@ nnoremap <C-l> <C-w>l
 
 " Look for files with FZF on ff
 nnoremap <silent> <C-p> :Files<CR>
-map <silent> <leader>ff :Files<CR>
+map <silent> <leader>sf :Files<CR>
 " Look for gitfiles with fg
-map <silent> <leader>fg :GFiles<CR>
-" Show buffers with fb
-map <silent> <leader>fb :Buffers<CR>
-" Show tags with ft
-map <silent> <leader>ft :Tags<CR>
+map <silent> <leader>sg :GFiles<CR>
+" Show buffers with lb
+map <silent> <leader>lb :Buffers<CR>
+" Show tags with lt
+map <silent> <leader>lt :Tags<CR>
 " Search all file contents with  ripgrep on Ctrl+g
 nnoremap <silent> <C-g> :Rg<CR>
 map <silent> <leader>fa :Rg<CR>
@@ -116,8 +116,15 @@ map <silent> <leader>fs :BLines<CR>
 nnoremap <Leader>b :ls<Cr>:b<Space>
 " Remap escape to jk
 inoremap jk <Esc>
+inoremap fj <Esc>
 " Open Netrw for file browsing with dash(-)
 nnoremap <silent> - :Explore<CR>
+
+if has('unix')
+    vmap <silent> <leader>cc "+y
+elseif has('macunix')
+    vmap <silent> <leader>cc "*y
+endif
 
 " Tab sanity
 set expandtab
@@ -157,8 +164,8 @@ let g:netrw_liststyle = 3
 
 " Sort fix from https://github.com/tpope/vim-vinegar
 function! s:sort_sequence(suffixes) abort
-  return '[\/]$,*' . (empty(a:suffixes) ? '' : ',\%(' .
-        \ join(map(split(a:suffixes, ','), 'escape(v:val, ".*$~")'), '\|') . '\)[*@]\=$')
+    return '[\/]$,*' . (empty(a:suffixes) ? '' : ',\%(' .
+                \ join(map(split(a:suffixes, ','), 'escape(v:val, ".*$~")'), '\|') . '\)[*@]\=$')
 endfunction
 let g:netrw_sort_sequence = s:sort_sequence(&suffixes)
 
@@ -189,7 +196,7 @@ set background=dark
 colorscheme PaperColor
 highlight ColorColumn ctermbg=238 guibg=#232728
 
-" GO 
+" GO
 "
 
 " go-vim plugin specific commands
@@ -202,9 +209,16 @@ let g:go_auto_type_info = 1
 
 autocmd Filetype go inoremap <buffer> . .<C-x><C-o>
 
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
+" Launch gopls when Go files are in use
+let g:LanguageClient_serverCommands = {
+            \ 'go': ['gopls']
+            \ }
+
 " If you want to disable gofmt on save
 " let g:go_fmt_autosave = 0
-
 
 
 " TF
@@ -242,22 +256,22 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " This is the default extra key bindings
 let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+            \ 'ctrl-t': 'tab split',
+            \ 'ctrl-x': 'split',
+            \ 'ctrl-v': 'vsplit' }
 
 " An action can be a reference to a function that processes selected lines
 function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
+    call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+    copen
+    cc
 endfunction
 
 let g:fzf_action = {
-  \ 'ctrl-q': function('s:build_quickfix_list'),
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+            \ 'ctrl-q': function('s:build_quickfix_list'),
+            \ 'ctrl-t': 'tab split',
+            \ 'ctrl-x': 'split',
+            \ 'ctrl-v': 'vsplit' }
 
 " Show fzf at the bottom
 let g:fzf_layout = { 'down': '~30%' }
@@ -273,3 +287,4 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 " Autoformat
 let g:python3_host_prog='/usr/bin/python3'
 noremap <Leader>af :Autoformat<CR>
+source /usr/share/doc/fzf/examples/fzf.vim
