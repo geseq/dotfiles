@@ -141,11 +141,12 @@ autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype scss setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab
 autocmd FileType make setlocal noexpandtab
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype tf setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype js setlocal tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab
 
 
 " Hardcore mode, disable arrow keys.
@@ -282,9 +283,10 @@ let g:fzf_layout = { 'down': '~30%' }
 "   'previous-history' instead of 'down' and 'up'.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
+source /usr/share/doc/fzf/examples/fzf.vim
 
 
 " Autoformat
 let g:python3_host_prog='/usr/bin/python3'
 noremap <Leader>af :Autoformat<CR>
-source /usr/share/doc/fzf/examples/fzf.vim
+au BufWrite * silent! :Autoformat
