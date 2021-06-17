@@ -44,10 +44,6 @@ vim +GoInstallBinaries +qall
 # install vim-terraform
 git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/vim-terraform
 
-# install vim-vinegar
-# rm -rf  ~/.vim/pack/plugins/start/vim-vinegar
-# git clone https://github.com/tpope/vim-vinegar.git ~/.vim/pack/plugins/start/vim-vinegar
-
 # install vim-mucomplete
 git clone https://github.com/lifepillar/vim-mucomplete.git ~/.vim/pack/plugins/start/vim-mucomplete
 
