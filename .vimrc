@@ -283,10 +283,16 @@ let g:fzf_layout = { 'down': '~30%' }
 "   'previous-history' instead of 'down' and 'up'.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
-source /usr/share/doc/fzf/examples/fzf.vim
+if has('unix')
+    source /usr/share/doc/fzf/examples/fzf.vim
+elseif has('macunix')
+    set rtp+=/usr/local/opt/fzf
+endif
+
 
 
 " Autoformat
 let g:python3_host_prog='/usr/bin/python3'
 noremap <Leader>af :Autoformat<CR>
 au BufWrite * silent! :Autoformat
+
