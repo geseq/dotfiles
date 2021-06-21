@@ -31,6 +31,9 @@ curl -o ~/.vim/colors/PaperColor.vim https://raw.githubusercontent.com/NLKNguyen
 
 # Install plugins
 
+# Install fzf
+(git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install)
+
 # install fzf.vim
 git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/plugins/start/fzf.vim
 
