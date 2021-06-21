@@ -284,7 +284,7 @@ let g:fzf_layout = { 'down': '~30%' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 if has('unix')
-    source /usr/share/doc/fzf/examples/fzf.vim
+    source ~/.fzf/plugin/fzf.vim
 elseif has('macunix')
     set rtp+=/usr/local/opt/fzf
 endif
