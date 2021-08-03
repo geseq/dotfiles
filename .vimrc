@@ -97,6 +97,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+nnoremap bj 10<c-d>
+nnoremap bk 10<c-u>
+
 " Look for files with FZF on ff
 nnoremap <silent> <C-p> :Files<CR>
 map <silent> <leader>sf :Files<CR>
