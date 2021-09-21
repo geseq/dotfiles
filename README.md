@@ -1,4 +1,7 @@
 # dotfiles
 
-Install fzf and rg before using this
+Download this repository and open it in terminal. Run the following:
+```
+./setup.sh
+```
 

@@ -7,13 +7,6 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
-if [[ $machine == "Mac" ]]; then
-    brew install vim fzf ripgrep
-elif [[ $machine == "Linux" ]]; then
-    sudo apt -y install fzf ripgrep
-    sudo apt -y install flameshot
-fi
-
 echo "Backing up ~/.vimrc to ~/.vimrc.bak"
 mv ~/.vimrc ~/.vimrc.bak
 
