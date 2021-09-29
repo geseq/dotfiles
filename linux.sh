@@ -70,6 +70,9 @@ regolith-look refresh
 sudo apt purge remontoire -y
 sudo apt install -y i3xrocks-time i3xrocks-volume 
 
+# blueman
+sudo apt install -y blueman
+
 # yubikey-agent
 sudo apt -y install build-essential libpcsclite-dev pcscd
 git clone https://filippo.io/yubikey-agent
