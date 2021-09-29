@@ -56,6 +56,10 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository -y "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt update && sudo apt install -y terraform
 
+# ulauncher
+sudo add-apt-repository -y ppa:agornostal/ulauncher
+sudo apt update && sudo apt install -y ulauncher
+
 # regolith
 sudo add-apt-repository -y ppa:regolith-linux/stable
 sudo apt install -y regolith-desktop-complete
