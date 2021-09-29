@@ -59,6 +59,7 @@ sudo apt update && sudo apt install -y terraform
 # ulauncher
 sudo add-apt-repository -y ppa:agornostal/ulauncher
 sudo apt update && sudo apt install -y ulauncher
+systemctl --user enable --now ulauncher
 
 # regolith
 sudo add-apt-repository -y ppa:regolith-linux/stable
