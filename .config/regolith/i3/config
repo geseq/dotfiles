@@ -39,8 +39,8 @@
 ###############################################################################
 
 # Meta Key - Alt key is Mod1, and Windows key is Mod4
-set_from_resource $mod  i3-wm.mod Mod4
-set_from_resource $alt  i3-wm.alt Mod1
+set $mod  Mod1
+set $alt  Mod4
 
 set_from_resource $i3-wm.binding. i3-wm.binding.
 
@@ -364,6 +364,10 @@ exec --no-startup-id /usr/bin/unclutter -b
 
 # Load nm-applet to provide auth dialogs for network access
 exec --no-startup-id /usr/bin/nm-applet
+
+# Load ulauncher
+exec --no-startup-id /usr/bin/ulauncher
+exec --no-startup-id /usr/bin/ulauncher-toggle
 
 ###############################################################################
 # Common Mac key bindings
