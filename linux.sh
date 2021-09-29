@@ -68,6 +68,7 @@ sudo apt install regolith-look-ubuntu
 regolith-look set ubuntu
 regolith-look refresh
 sudo apt purge remontoire -y
+sudo apt install -y i3xrocks-time i3xrocks-volume 
 
 # yubikey-agent
 sudo apt -y install build-essential libpcsclite-dev pcscd
