@@ -67,6 +67,7 @@ sudo apt install -y regolith-desktop-minimal
 sudo apt install regolith-look-ubuntu
 regolith-look set ubuntu
 regolith-look refresh
+sudo apt purge remontoire -y
 
 # yubikey-agent
 sudo apt -y install build-essential libpcsclite-dev pcscd
