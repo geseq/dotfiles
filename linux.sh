@@ -63,7 +63,7 @@ systemctl --user enable --now ulauncher
 
 # regolith
 sudo add-apt-repository -y ppa:regolith-linux/stable
-sudo apt install -y regolith-desktop-complete
+sudo apt install -y regolith-desktop-minimal
 sudo apt install regolith-look-ubuntu
 regolith-look set ubuntu
 regolith-look refresh
