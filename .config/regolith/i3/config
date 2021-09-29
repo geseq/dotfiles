@@ -234,36 +234,19 @@ bindsym $mod+n exec /usr/bin/rofication-gui
 # Workspace Management
 ###############################################################################
 
-# i3-snapshot for load/save current layout
-## Modify // Save Window Layout // <Alt> , ##
-set_from_resource $i3-wm.binding.save_layout i3-wm.binding.save_layout comma
-bindsym $mod+$i3-wm.binding.save_layout  exec /usr/bin/i3-snapshot -o > /tmp/i3-snapshot
-
-## Modify // Load Window Layout // <Alt> . ##
-set_from_resource $i3-wm.binding.load_layout i3-wm.binding.load_layout period
-bindsym $mod+$i3-wm.binding.load_layout exec /usr/bin/i3-snapshot -c < /tmp/i3-snapshot
-
 # Toggle bar visibility
 ## Modify // Toggle Bar // <Alt> i ##
-set_from_resource $i3-wm.binding.bar_toggle i3-wm.binding.bar_toggle i
-bindsym $mod+$i3-wm.binding.bar_toggle bar mode toggle
+bindsym $mod+i bar mode toggle
 
 # Cause Settings app to float above tiled windows
 floating_maximum_size -1 x -1
 for_window [class="floating_window"] floating enable
 
-set_from_resource $i3-wm.workspace.auto_back_and_forth i3-wm.workspace.auto_back_and_forth no
-workspace_auto_back_and_forth $i3-wm.workspace.auto_back_and_forth
+workspace_auto_back_and_forth no
 
 ###############################################################################
 # Window Resize and Gaps
 ###############################################################################
-
-set_from_resource $i3-wm.binding.inc_gaps i3-wm.binding.inc_gaps plus
-set_from_resource $i3-wm.binding.dec_gaps i3-wm.binding.dec_gaps minus
-
-set_from_resource $i3-wm.binding.inc_gaps_big i3-wm.binding.inc_gaps_big Shift+plus
-set_from_resource $i3-wm.binding.dec_gaps_big i3-wm.binding.dec_gaps_big Shift+minus
 
 ## Resize // Enter Resize Mode // <Alt> r ##
 mode "Resize Mode" {
@@ -281,27 +264,22 @@ mode "Resize Mode" {
         bindsym Shift+Right resize grow width 12 px or 12 ppt
 
 ## Resize // Resize Window // k j h l ##
-        bindsym $i3-wm.binding.left resize shrink width 6 px or 6 ppt
-        bindsym $i3-wm.binding.up resize grow height 6 px or 6 ppt
-        bindsym $i3-wm.binding.down resize shrink height 6 px or 6 ppt
-        bindsym $i3-wm.binding.right resize grow width 6 px or 6 ppt
+        bindsym h resize shrink width 6 px or 6 ppt
+        bindsym j resize grow height 6 px or 6 ppt
+        bindsym k resize shrink height 6 px or 6 ppt
+        bindsym l resize grow width 6 px or 6 ppt
 
-        bindsym $i3-wm.binding.move_left resize shrink width 12 px or 12 ppt
-        bindsym $i3-wm.binding.move_up resize grow height 12 px or 12 ppt
-        bindsym $i3-wm.binding.move_down resize shrink height 12 px or 12 ppt
-        bindsym $i3-wm.binding.move_right resize grow width 12 px or 12 ppt
-
-## Resize // Window Gaps // + - ##
-        bindsym $i3-wm.binding.dec_gaps gaps inner current minus 6
-        bindsym $i3-wm.binding.inc_gaps gaps inner current plus 6
-        bindsym $i3-wm.binding.dec_gaps_big gaps inner current minus 12
-        bindsym $i3-wm.binding.inc_gaps_big gaps inner current plus 12
+        bindsym Shift+h resize shrink width 12 px or 12 ppt
+        bindsym Shift+j resize grow height 12 px or 12 ppt
+        bindsym Shift+k resize shrink height 12 px or 12 ppt
+        bindsym Shift+l resize grow width 12 px or 12 ppt
 
 ## Resize // Exit Resize Mode // Escape or Enter ##
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
+
 bindsym $mod+r mode "Resize Mode"
 
 ###############################################################################
@@ -338,65 +316,33 @@ client.focused          #d9d9d9     #cecece     #000000     #d9d9d9     #d9d9d9
 client.urgent           #d9d9d9     #dc322f     #fdf6e3     #002b36     #d9d9d9
 
 
-# Create variables from Xresources for i3bars's look.
-set_from_resource $i3-wm.bar.background.color i3-wm.bar.background.color "#002b36"
-set_from_resource $i3-wm.bar.statusline.color i3-wm.bar.statusline.color "#93a1a1"
-set_from_resource $i3-wm.bar.separator.color i3-wm.bar.separator.color "#268bd2"
-
-set_from_resource $i3-wm.bar.workspace.focused.border.color i3-wm.bar.workspace.focused.border.color "#073642"
-set_from_resource $i3-wm.bar.workspace.focused.background.color i3-wm.bar.workspace.focused.background.color "#073642"
-set_from_resource $i3-wm.bar.workspace.focused.text.color i3-wm.bar.workspace.focused.text.color "#eee8d5"
-
-set_from_resource $i3-wm.bar.workspace.active.border.color i3-wm.bar.workspace.active.border.color "#073642"
-set_from_resource $i3-wm.bar.workspace.active.background.color i3-wm.bar.workspace.active.background.color "#073642"
-set_from_resource $i3-wm.bar.workspace.active.text.color i3-wm.bar.workspace.active.text.color "#586e75"
-
-set_from_resource $i3-wm.bar.workspace.inactive.border.color i3-wm.bar.workspace.inactive.border.color "#002b36"
-set_from_resource $i3-wm.bar.workspace.inactive.background.color i3-wm.bar.workspace.inactive.background.color "#002b36"
-set_from_resource $i3-wm.bar.workspace.inactive.text.color i3-wm.bar.workspace.inactive.text.color "#586e75"
-
-set_from_resource $i3-wm.bar.workspace.urgent.border.color i3-wm.bar.workspace.urgent.border.color "#dc322f"
-set_from_resource $i3-wm.bar.workspace.urgent.background.color i3-wm.bar.workspace.urgent.background.color "#dc322f"
-set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urgent.text.color "#fdf6e3"
-
 # Sets i3 font for dialogs
-set_from_resource $i3-wm.font i3-wm.font pango:Source Code Pro Medium 13
-font $i3-wm.font
+font pango:Source Code Pro Medium 13
 
 ###############################################################################
 # i3 Bar
 ###############################################################################
 
-set_from_resource $i3-wm.bar.position i3-wm.bar.position bottom
-set_from_resource $i3-wm.bar.font i3-wm.bar.font pango:Source Code Pro Medium 13, Material Design Icons 13
-set_from_resource $i3-wm.bar.separator i3-wm.bar.separator " "
-set_from_resource $i3-wm.bar.trayoutput i3-wm.bar.trayoutput primary
-set_from_resource $i3-wm.bar.stripworkspacenumbers i3-wm.bar.stripworkspacenumbers yes
-set_from_resource $i3-wm.bar.mode i3-wm.bar.mode dock
-
-# i3xrocks config file. Override this for a custom status bar generator.
-set_from_resource $i3-wm.bar.status_command i3-wm.bar.status_command i3xrocks -u ~/.config/regolith/i3xrocks/conf.d -d /etc/regolith/i3xrocks/conf.d
-
 # The bar configuration
 bar {
-    position $i3-wm.bar.position
-        mode $i3-wm.bar.mode
-        font $i3-wm.bar.font
-        separator_symbol $i3-wm.bar.separator
-        status_command $i3-wm.bar.status_command
-        tray_output $i3-wm.bar.trayoutput
-        strip_workspace_numbers $i3-wm.bar.stripworkspacenumbers
+    position bottom
+        mode dock
+        font pango:Source Code Pro Medium 13, Material Design Icons 13
+        separator_symbol " "
+        status_command i3xrocks -u ~/.config/regolith/i3xrocks/conf.d -d /etc/regolith/i3xrocks/conf.d
+        tray_output primary
+        strip_workspace_numbers yes
 
         colors {
-            background $i3-wm.bar.background.color
-                statusline $i3-wm.bar.statusline.color
-                separator  $i3-wm.bar.separator.color
+            background #000000
+                statusline #FFFFFF
+                separator  #666666
 
-# BORDER           BACKGROUND                                     TEXT
-                focused_workspace  $i3-wm.bar.workspace.focused.border.color      $i3-wm.bar.workspace.focused.background.color   $i3-wm.bar.workspace.focused.text.color
-                active_workspace   $i3-wm.bar.workspace.active.border.color       $i3-wm.bar.workspace.active.background.color    $i3-wm.bar.workspace.active.text.color
-                inactive_workspace $i3-wm.bar.workspace.inactive.border.color     $i3-wm.bar.workspace.inactive.background.color  $i3-wm.bar.workspace.inactive.text.color
-                urgent_workspace   $i3-wm.bar.workspace.urgent.border.color       $i3-wm.bar.workspace.urgent.background.color    $i3-wm.bar.workspace.urgent.text.color
+                focused_workspace  #4C7899 #285577 #FFFFFF
+                active_workspace   #333333 #222222 #FFFFFF
+                inactive_workspace #333333 #222222 #888888
+                urgent_workspace   #2F343A #900000 #FFFFFF
+                binding_mode       #2F343A #900000 #FFFFFF
         }
 }
 
@@ -405,34 +351,19 @@ bar {
 ###############################################################################
 
 # Start the installed regolith-compositor
-set_from_resource $i3-wm.program.compositor i3-wm.program.compositor /usr/share/regolith-compositor/init
-exec_always --no-startup-id $i3-wm.program.compositor
+exec_always --no-startup-id /usr/share/regolith-compositor/init
 
 # Start Rofication for notifications
-set_from_resource $i3-wm.program.notifications i3-wm.program.notifications /usr/bin/rofication-daemon
-exec --no-startup-id $i3-wm.program.notifications
+exec --no-startup-id /usr/bin/rofication-daemon
 
 # Launch first time user experience script
-set_from_resource $i3-wm.program.ftui i3-wm.program.ftui /usr/bin/regolith-ftue
-exec --no-startup-id $i3-wm.program.ftui
+exec --no-startup-id /usr/bin/regolith-ftue
 
 # Hide the mouse pointer if unused for a duration
-set_from_resource $i3-wm.program.unclutter i3-wm.program.unclutter /usr/bin/unclutter -b
-exec --no-startup-id $i3-wm.program.unclutter
+exec --no-startup-id /usr/bin/unclutter -b
 
 # Load nm-applet to provide auth dialogs for network access
-set_from_resource $i3-wm.program.nm-applet i3-wm.program.nm-applet /usr/bin/nm-applet
-exec --no-startup-id $i3-wm.program.nm-applet
-
-# User programs from Xresources
-# To use, define an Xresource key i3-wm.program.[1-3] with the value of the program to launch.
-# See https://regolith-linux.org/docs/howto/override-xres/ for details.
-set_from_resource $i3-wm.program.1 i3-wm.program.1 :
-exec --no-startup-id $i3-wm.program.1
-set_from_resource $i3-wm.program.2 i3-wm.program.2 :
-exec --no-startup-id $i3-wm.program.2
-set_from_resource $i3-wm.program.3 i3-wm.program.3 :
-exec --no-startup-id $i3-wm.program.3
+exec --no-startup-id /usr/bin/nm-applet
 
 ###############################################################################
 # Common Mac key bindings
