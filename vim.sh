@@ -10,6 +10,9 @@ esac
 echo "Backing up ~/.vimrc to ~/.vimrc.bak"
 mv ~/.vimrc ~/.vimrc.bak
 
+echo "Backing up ~/.tmux.conf to ~/.tmux.conf.bak"
+mv ~/.tmux.conf ~/.tmux.conf.bak
+
 echo "Backing up ~/.vim to ~/.vim.bak"
 mv ~/.vim ~/.vim.bak
 
@@ -55,6 +58,7 @@ mkdir -p ~/.vim/plugin
 curl -o ~/.vim/plugin/auto-pairs.vim  https://raw.githubusercontent.com/jiangmiao/auto-pairs/master/plugin/auto-pairs.vim
 
 cp ./.vimrc ~/
+cp ./.tmux.conf ~/
 
 if [[ $machine == "Linux" ]]; then
     cp -r ./.config/* ~/.config
