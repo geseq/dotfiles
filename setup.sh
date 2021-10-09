@@ -22,5 +22,5 @@ fi
 # Setup shell
 ./shell.sh
 
-# Setup vim and other configs
-./vim.sh
+# Setup vim and tmux
+./vimux.sh
