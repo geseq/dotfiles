@@ -73,6 +73,13 @@ sudo apt install -y i3xrocks-time i3xrocks-volume
 # blueman
 sudo apt install -y blueman
 
+# clipper
+git clone git://git.wincent.com/clipper.git
+(cd clipper && go build && sudo cp clipper /usr/local/bin/ && cp contrib/linux/systemd-service/clipper.service ~/.config/systemd/user)
+systemctl --user daemon-reload
+systemctl --user enable clipper.service
+systemctl --user start clipper.service
+
 # yubikey-agent
 sudo apt -y install build-essential libpcsclite-dev pcscd
 git clone https://filippo.io/yubikey-agent

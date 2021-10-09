@@ -344,6 +344,7 @@ brew install tmux
 brew install vim
 brew install yubikey-agent
 brew install terraform
+brew install clipper
 
 brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font font-fira-code
@@ -352,6 +353,7 @@ brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 
 brew services start yubikey-agent
+brew services start clipper
 
 export GNUPGHOME=~/.gnupg
 

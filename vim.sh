@@ -59,6 +59,7 @@ curl -o ~/.vim/plugin/auto-pairs.vim  https://raw.githubusercontent.com/jiangmia
 
 cp ./.vimrc ~/
 cp ./.tmux.conf ~/
+cp ./.clipper.json ~/
 
 if [[ $machine == "Linux" ]]; then
     cp -r ./.config/* ~/.config
