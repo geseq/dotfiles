@@ -234,10 +234,6 @@ bindsym $mod+n exec /usr/bin/rofication-gui
 # Workspace Management
 ###############################################################################
 
-# Toggle bar visibility
-## Modify // Toggle Bar // <Alt> i ##
-bindsym $mod+i bar mode toggle
-
 # Cause Settings app to float above tiled windows
 floating_maximum_size -1 x -1
 for_window [class="floating_window"] floating enable
