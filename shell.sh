@@ -28,6 +28,8 @@ export PATH=$PATH:$GOPATH/bin
 
 # set default editor
 export EDITOR=vim
+# this will fix bindings on tmux
+bindkey -e
 
 # set history size
 export HISTSIZE=10000
