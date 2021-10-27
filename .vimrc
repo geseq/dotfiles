@@ -297,4 +297,7 @@ endif
 let g:python3_host_prog='/usr/bin/python3'
 noremap <Leader>af :Autoformat<CR>
 au BufWrite * silent! :Autoformat
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
 
