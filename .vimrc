@@ -115,10 +115,10 @@ map <silent> <leader>fa :Rg<CR>
 " Search within file with FZF on Ctrl+f
 nnoremap <silent> <C-f> :BLines<CR>
 map <silent> <leader>fs :BLines<CR>
-" Open buffer list ready to fill in on ,b
+" Open buffer list ready to fill in on <space>b
 nnoremap <Leader>b :ls<Cr>:b<Space>
-" Remap escape to ii
-inoremap ii <Esc>
+" Remap escape to <space>i
+noremap <Leader>i <Esc>
 " Open Netrw for file browsing with dash(-)
 nnoremap <silent> - :Explore<CR>
 
