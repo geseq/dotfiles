@@ -118,7 +118,7 @@ map <silent> <leader>fs :BLines<CR>
 " Open buffer list ready to fill in on <space>b
 nnoremap <Leader>b :ls<Cr>:b<Space>
 " Remap escape to <space>i
-noremap <Leader>i <Esc>
+inoremap <Leader>i <Esc>
 " Open Netrw for file browsing with dash(-)
 nnoremap <silent> - :Explore<CR>
 
