@@ -34,7 +34,7 @@ sudo apt install -y ufw
 sudo ufw enable
 
 #development tools
-sudo apt install -y wget vim curl xclip
+sudo apt install -y wget vim neovim curl xclip
 sudo snap install --classic go
 sudo apt install -y fzf ripgrep
 sudo apt install -y tmux
