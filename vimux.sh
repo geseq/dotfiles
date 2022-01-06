@@ -57,6 +57,8 @@ git clone https://github.com/vim-autoformat/vim-autoformat.git ~/.vim/pack/plugi
 mkdir -p ~/.vim/plugin
 curl -o ~/.vim/plugin/auto-pairs.vim  https://raw.githubusercontent.com/jiangmiao/auto-pairs/master/plugin/auto-pairs.vim
 
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+ 
 cp ./.vimrc ~/
 cp ./.tmux.conf ~/
 cp ./.clipper.json ~/
