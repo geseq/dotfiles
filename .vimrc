@@ -12,8 +12,6 @@ set number
 set nowrap
 " Enhance command-line completion
 set wildmenu
-" Allow cursor keys in insert mode
-set esckeys
 " Hide unsaved changes instead of closing them
 set hidden
 " Allow backspace to delete indentation and inserted text
