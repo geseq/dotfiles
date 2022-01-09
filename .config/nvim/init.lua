@@ -43,7 +43,7 @@ require('packer').startup{
         require("telescope").load_extension("fzf")
       end,
     }
-    use 'yorik1984/newpaper.nvim' -- Theme inspired by Atom
+    use 'nlknguyen/papercolor-theme' -- Theme 
     use 'itchyny/lightline.vim' -- Fancier statusline
     -- Add indentation guides even on blank lines
     use 'lukas-reineke/indent-blankline.nvim'
@@ -118,10 +118,11 @@ vim.o.undofile=true
 vim.o.undodir='~/.vim/undos'
 
 --Set colorscheme (order is important here)
-vim.g.newpaper_style = 'dark'
-require('newpaper').setup()
+vim.o.colorcolumn='80,100'
 vim.o.termguicolors = true
-vim.cmd [[colorscheme newpaper]]
+vim.o.background = 'dark'
+vim.cmd [[colorscheme PaperColor]]
+vim.cmd [[highlight ColorColumn ctermbg=238 guibg=#232728]]
 
 --Set statusbar
 vim.g.lightline = {
