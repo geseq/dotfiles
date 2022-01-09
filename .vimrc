@@ -88,12 +88,16 @@ let mapleader = " "
 " noremap l k
 " noremap k j
 " noremap j h
+noremap s h
+noremap , j
 
 " Window movement with Ctrl+(hjkl)
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
+nnoremap <C-s> <C-w>h
 nnoremap <C-l> <C-w>l
+" <C-,> won't work due to https://vimhelp.org/vim_faq.txt.html#faq-20.5
 
 nnoremap bj 10<c-d>
 nnoremap bk 10<c-u>
@@ -115,8 +119,10 @@ nnoremap <silent> <C-f> :BLines<CR>
 map <silent> <leader>fs :BLines<CR>
 " Open buffer list ready to fill in on <space>b
 nnoremap <Leader>b :ls<Cr>:b<Space>
-" Remap escape to qq
+" Remap escape to qq and <leader>e
 inoremap qq <Esc>
+inoremap <Leader>e <Esc>
+
 " Open Netrw for file browsing with dash(-)
 nnoremap <silent> - :Explore<CR>
 
@@ -148,6 +154,7 @@ autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype tf setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype js setlocal tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab
 
+au FileType go nmap <leader>gd <Plug>(go-def-vertical)
 
 " Hardcore mode, disable arrow keys.
 noremap <Up> <NOP>
@@ -295,7 +302,8 @@ endif
 let g:python3_host_prog='/usr/bin/python3'
 noremap <Leader>af :Autoformat<CR>
 au BufWrite * silent! :Autoformat
+let g:formatdef_autopep8 = "'autopep8 - --max-line-length 180 --range '.a:firstline.' '.a:lastline"
+
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
-
