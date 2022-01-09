@@ -44,6 +44,9 @@ sudo apt install -y gnupg software-properties-common
 # lazygit
 sudo add-apt-repository -y ppa:lazygit-team/release && sudo apt update
 sudo apt install -y lazygit
+ 
+# fonts
+sudo apt install -y fonts-firacode
 
 # docker
 sudo apt install -y apt-transport-https ca-certificates lsb-release
