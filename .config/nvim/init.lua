@@ -197,8 +197,10 @@ vim.api.nvim_set_keymap('n', '<leader>fa', [[<cmd>lua require('telescope.builtin
 -- Window movement with Ctrl+(hjkl)
 vim.api.nvim_set_keymap('n', '<C-j>', [[<C-w>j]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-h>', [[<C-w>h]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-s>', [[<C-w>h]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', [[<C-w>k]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', [[<C-w>l]], { noremap = true, silent = true })
+-- <C-,> won't work due to https://vimhelp.org/vim_faq.txt.html#faq-20.5
 
 -- Custom movement keys (s for left and , for down) in addition to hj
 vim.api.nvim_set_keymap('', ',', 'j', { noremap = true })
