@@ -49,10 +49,6 @@ require('packer').startup{
     use 'lukas-reineke/indent-blankline.nvim'
     -- Add git related info in the signs columns and popups
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-    -- Highlight, edit, and navigate code using a fast incremental parsing library
-    use 'nvim-treesitter/nvim-treesitter'
-    -- Additional textobjects for treesitter
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
     use 'hrsh7th/cmp-nvim-lsp'
@@ -115,7 +111,7 @@ vim.o.swapfile=false
 
 -- Centralize undo history
 vim.o.undofile=true
-vim.o.undodir='~/.vim/undos'
+vim.o.undodir= vim.env.HOME .. '/.vim/undos'
 
 --Set colorscheme (order is important here)
 vim.o.colorcolumn='80,100'
@@ -175,8 +171,8 @@ require('telescope').setup {
   extensions = {
     frecency = {
       workspaces = {
-        dot = '~/Workshop/dotfiles',
-        rs = '~/Workshop/redsift',
+        dot = vim.env.HOME .. '/Workshop/dotfiles',
+        rs = vim.env.HOME .. '/Workshop/redsift',
       }
     },
     fzf = {
@@ -218,6 +214,7 @@ vim.api.nvim_set_keymap('n', '-', [[:Explore<CR>]], { noremap = true, silent = t
 
 -- Remap escape to jk and <Leader>e
 vim.api.nvim_set_keymap('i', '<leader>e', [[<Esc>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<leader><space>', [[<Esc>]], { noremap = true, silent = true })
 
 if vim.fn.has('unix') then
     vim.api.nvim_set_keymap('v', '<leader>cc', '"+y', {})
@@ -226,58 +223,7 @@ elseif vim.fn.has('macunix') then
 end
 
 
--- Treesitter configuration
--- Parsers must be installed manually via :TSInstall
-require('nvim-treesitter.configs').setup {
-  highlight = {
-    enable = true, -- false will disable the whole extension
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = 'gnn',
-      node_incremental = 'grn',
-      scope_incremental = 'grc',
-      node_decremental = 'grm',
-    },
-  },
-  indent = {
-    enable = true,
-  },
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-      keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
-        ['af'] = '@function.outer',
-        ['if'] = '@function.inner',
-        ['ac'] = '@class.outer',
-        ['ic'] = '@class.inner',
-      },
-    },
-    move = {
-      enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
-      goto_next_start = {
-        [']m'] = '@function.outer',
-        [']]'] = '@class.outer',
-      },
-      goto_next_end = {
-        [']M'] = '@function.outer',
-        [']['] = '@class.outer',
-      },
-      goto_previous_start = {
-        ['[m'] = '@function.outer',
-        ['[['] = '@class.outer',
-      },
-      goto_previous_end = {
-        ['[M'] = '@function.outer',
-        ['[]'] = '@class.outer',
-      },
-    },
-  },
-}
+
 
 -- LSP settings
 local lspconfig = require 'lspconfig'
@@ -289,7 +235,7 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
