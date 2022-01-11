@@ -25,18 +25,10 @@ require('packer').startup{
     use { 'nvim-telescope/telescope.nvim',
       requires = {
         'nvim-lua/plenary.nvim',
-        'telescope-frecency.nvim',
         'telescope-fzf-native.nvim',
       },
     }
-    use {
-      'nvim-telescope/telescope-frecency.nvim',
-      requires = 'tami5/sqlite.lua',
-      config = function()
-        require("telescope").load_extension("frecency")
-      end,
-    }
-    use {
+   use {
       'nvim-telescope/telescope-fzf-native.nvim',
       run = 'make',
       config = function()
@@ -169,13 +161,7 @@ require('telescope').setup {
     },
   },
   extensions = {
-    frecency = {
-      workspaces = {
-        dot = vim.env.HOME .. '/Workshop/dotfiles',
-        rs = vim.env.HOME .. '/Workshop/redsift',
-      }
-    },
-    fzf = {
+   fzf = {
       fuzzy = true,
       override_generic_sorter = true,
       override_file_sorter = true,
@@ -349,6 +335,11 @@ cmp.setup {
 }
 
 
+
+-- Netrw
+
+-- Set treeview as default
+vim.g.netrw_liststyle = 3
 
 
 -- Language configurations
