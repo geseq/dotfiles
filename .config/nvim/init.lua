@@ -358,7 +358,7 @@ vim.g.go_def_mode='gopls'
 vim.g.go_info_mode='gopls'
 
 --If you want to disable gofmt on save
-vim.g.go_fmt_autosave = 0
+--vim.g.go_fmt_autosave = 0
 
 
 
