@@ -66,7 +66,7 @@ sudo apt update && sudo apt install -y ulauncher
 systemctl --user enable --now ulauncher
 
 # sway
-sudo apt install -y sway
+sudo apt install -y sway wdisplays
 # grim and slurp for screenshots in sway
 sudo apt install -y grim slurp
 
