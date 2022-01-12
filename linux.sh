@@ -41,6 +41,7 @@ sudo apt install -y tmux
 sudo apt install -y zsh
 sudo apt install -y gnupg software-properties-common
 sudo apt install -y jq
+sudo apt install -y network-manager
 
 # lazygit
 sudo add-apt-repository -y ppa:lazygit-team/release && sudo apt update
