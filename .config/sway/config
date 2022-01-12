@@ -177,21 +177,15 @@ hide_edge_borders smart
 ## Session // Exit App // <>> q ##
 bindsym $alt+q [con_id="__focused__"] kill
 
-## Session // Reload i3 Config // <Alt><Shift> c ##
-bindsym $mod+Shift+c reload
-
-## Session // Refresh Session // <Alt><Shift> r ##
-bindsym $mod+Shift+r exec --no-startup-id /usr/bin/regolith-look refresh
-
-## Session // Restart i3 // <Alt><Ctrl> r ##
-bindsym $mod+Ctrl+r restart
+## Session // Refresh sway config // <Alt><Shift> r ##
+bindsym $mod+Shift+r reload
 
 ###############################################################################
 # System Management
 ###############################################################################
 
 ## Modify // Display Settings // <Alt> d ##
-bindsym $mod+d exec gnome-control-center --class=floating_window display
+bindsym $mod+d exec wdisplays
 
 ## Modify // Bluetooth Settings // <Alt> b ##
 bindsym $mod+b exec gnome-control-center --class=floating_window bluetooth
