@@ -1,0 +1,360 @@
+###############################################################################
+# Key Mappings
+###############################################################################
+
+# Meta Key - Alt key is Mod1, and Windows key is Mod4
+set $mod  Mod1
+set $alt  Mod4
+
+
+###############################################################################
+# Workspace Names
+# These are the labels which define each i3 workspace.
+###############################################################################
+
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
+
+###############################################################################
+# Workspace Keys
+# These are the keys which will be used while binding workspace switching
+###############################################################################
+
+set $ws1_key  1
+set $ws2_key  2
+set $ws3_key  3
+set $ws4_key  4
+set $ws5_key  5
+set $ws6_key  6
+set $ws7_key  7
+set $ws8_key  8
+set $ws9_key  9
+set $ws10_key 0
+
+###############################################################################
+# Launcher dialogs
+###############################################################################
+
+## Launch // Terminal // <>> Enter ##
+bindsym $alt+Return exec /usr/bin/x-terminal-emulator
+
+## Launch // Browser // <>>Shift> Enter ##
+bindsym $alt+Shift+Return exec "gtk-launch $(xdg-settings get default-web-browser)"
+
+## Launch // Application // <>> Space ##
+bindsym $alt+space exec ulauncher-toggle
+
+###############################################################################
+# Window and Workspace Navigation
+###############################################################################
+
+## Navigate // Relative Parent // <Alt> a ##/
+bindsym $mod+p focus parent
+
+## Navigate // Relative Child // <Alt> z ##/
+bindsym $mod+z focus child
+
+## Navigate // Relative Window // <Alt> ↑ ↓ ← → ##
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+## Navigate // Relative Window // <Alt> k j h l ##
+bindsym $mod+h focus left
+bindsym $mod+s focus left
+bindsym $mod+j focus down
+bindsym $mod+comma focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+## Navigate // Workspaces 1-10 // <Alt> 0..9 ##
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+## Navigate // Next Workspace // <Alt> Tab ##
+bindsym $mod+Tab workspace next
+
+###############################################################################
+# Window and Workspace Configuration
+###############################################################################
+
+## Modify // Window Position // <Alt><Shift> ↑ ↓ ← → ##
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+## Modify // Window Position // <Alt><Shift> k j h l ##
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+s move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+comma move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+## Modify // Containing Workspace // <Alt><Ctrl><Shift> ↑ ↓ ← → ##
+bindsym $mod+Ctrl+Shift+Left move workspace to output left
+bindsym $mod+Ctrl+Shift+Down move workspace to output down
+bindsym $mod+Ctrl+Shift+Up move workspace to output up
+bindsym $mod+Ctrl+Shift+Right move workspace to output right
+
+## Modify // Containing Workspace // <Alt><Ctrl><Shift> k j h l ##
+bindsym $mod+Ctrl+Shift+h move workspace to output left
+bindsym $mod+Ctrl+Shift+s move workspace to output left
+bindsym $mod+Ctrl+Shift+j move workspace to output down
+bindsym $mod+Ctrl+Shift+comma move workspace to output down
+bindsym $mod+Ctrl+Shift+k move workspace to output up
+bindsym $mod+Ctrl+Shift+l move workspace to output right
+
+## Modify // Vertical Window Orientation // <Alt> w ##
+bindsym $mod+w split vertical
+
+## Modify // Horizontal Window Orientation // <Alt> g ##
+bindsym $mod+g split horizontal
+
+## Modify // Window Fullscreen Toggle // <Alt> f ##
+bindsym $mod+f fullscreen toggle
+
+## Modify // Window Floating Toggle // <Alt><Shift> f ##
+bindsym $mod+Shift+f floating toggle
+
+## Modify // Tile/Float Focus Toggle // <Alt><Shift> t ##
+bindsym $mod+Shift+t focus mode_toggle
+
+## Modify // Window Layout Mode // <Alt> t ##
+bindsym $mod+t layout toggle tabbed splith v
+
+## Modify // Move Window to Workspace 1 - 10 // <Alt><Shift> 0..9 ##
+bindsym $mod+Shift+$ws1_key move container to workspace number $ws1
+bindsym $mod+Shift+$ws2_key move container to workspace number $ws2
+bindsym $mod+Shift+$ws3_key move container to workspace number $ws3
+bindsym $mod+Shift+$ws4_key move container to workspace number $ws4
+bindsym $mod+Shift+$ws5_key move container to workspace number $ws5
+bindsym $mod+Shift+$ws6_key move container to workspace number $ws6
+bindsym $mod+Shift+$ws7_key move container to workspace number $ws7
+bindsym $mod+Shift+$ws8_key move container to workspace number $ws8
+bindsym $mod+Shift+$ws9_key move container to workspace number $ws9
+bindsym $mod+Shift+$ws10_key move container to workspace number $ws10
+
+# move focused container to workspace, move to workspace
+## Modify // Carry Window to Workspace 1 - 10// <><Alt> 0..9 ##
+bindsym $mod+$alt+$ws1_key move container to workspace number $ws1; workspace number $ws1
+bindsym $mod+$alt+$ws2_key move container to workspace number $ws2; workspace number $ws2
+bindsym $mod+$alt+$ws3_key move container to workspace number $ws3; workspace number $ws3
+bindsym $mod+$alt+$ws4_key move container to workspace number $ws4; workspace number $ws4
+bindsym $mod+$alt+$ws5_key move container to workspace number $ws5; workspace number $ws5
+bindsym $mod+$alt+$ws6_key move container to workspace number $ws6; workspace number $ws6
+bindsym $mod+$alt+$ws7_key move container to workspace number $ws7; workspace number $ws7
+bindsym $mod+$alt+$ws8_key move container to workspace number $ws8; workspace number $ws8
+bindsym $mod+$alt+$ws9_key move container to workspace number $ws9; workspace number $ws9
+bindsym $mod+$alt+$ws10_key move container to workspace number $ws10; workspace number $ws10
+
+# Hiding borders adjacent to the screen edges.
+# The "smart" setting hides borders on workspaces with only one window visible.
+hide_edge_borders smart
+
+###############################################################################
+# Session Management
+###############################################################################
+
+## Session // Exit App // <>> q ##
+bindsym $alt+q [con_id="__focused__"] kill
+
+## Session // Reload i3 Config // <Alt><Shift> c ##
+bindsym $mod+Shift+c reload
+
+## Session // Refresh Session // <Alt><Shift> r ##
+bindsym $mod+Shift+r exec --no-startup-id /usr/bin/regolith-look refresh
+
+## Session // Restart i3 // <Alt><Ctrl> r ##
+bindsym $mod+Ctrl+r restart
+
+###############################################################################
+# System Management
+###############################################################################
+
+## Modify // Display Settings // <Alt> d ##
+bindsym $mod+d exec gnome-control-center --class=floating_window display
+
+## Modify // Bluetooth Settings // <Alt> b ##
+bindsym $mod+b exec gnome-control-center --class=floating_window bluetooth
+
+## Launch // Notification Viewer // <Alt> n ##
+bindsym $mod+n exec /usr/bin/rofication-gui
+
+###############################################################################
+# Workspace Management
+###############################################################################
+
+# Cause Settings app to float above tiled windows
+floating_maximum_size -1 x -1
+for_window [class="floating_window"] floating enable
+
+workspace_auto_back_and_forth no
+
+###############################################################################
+# Window Resize and Gaps
+###############################################################################
+
+## Resize // Enter Resize Mode // <Alt> r ##
+mode "Resize Mode" {
+# These bindings trigger as soon as you enter the resize mode
+
+## Resize // Resize Window // ↑ ↓ ← → ##
+    bindsym Left resize shrink width 6 px or 6 ppt
+        bindsym Down resize grow height 6 px or 6 ppt
+        bindsym Up resize shrink height 6 px or 6 ppt
+        bindsym Right resize grow width 6 px or 6 ppt
+
+        bindsym Shift+Left resize shrink width 12 px or 12 ppt
+        bindsym Shift+Down resize grow height 12 px or 12 ppt
+        bindsym Shift+Up resize shrink height 12 px or 12 ppt
+        bindsym Shift+Right resize grow width 12 px or 12 ppt
+
+## Resize // Resize Window // k j h l ##
+        bindsym h resize shrink width 6 px or 6 ppt
+        bindsym s resize shrink width 6 px or 6 ppt
+        bindsym j resize grow height 6 px or 6 ppt
+        bindsym comma resize grow height 6 px or 6 ppt
+        bindsym k resize shrink height 6 px or 6 ppt
+        bindsym l resize grow width 6 px or 6 ppt
+
+        bindsym Shift+h resize shrink width 12 px or 12 ppt
+        bindsym Shift+s resize shrink width 12 px or 12 ppt
+        bindsym Shift+j resize grow height 12 px or 12 ppt
+        bindsym Shift+comma resize grow height 12 px or 12 ppt
+        bindsym Shift+k resize shrink height 12 px or 12 ppt
+        bindsym Shift+l resize grow width 12 px or 12 ppt
+
+## Resize // Exit Resize Mode // Escape or Enter ##
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "Resize Mode"
+
+###############################################################################
+# i3 Appearance and Behavior
+###############################################################################
+
+# Disable titlebar
+default_border pixel 3
+default_floating_border pixel 1
+for_window [class=".*"] border pixel 3
+
+# Specify the distance between windows in pixels. (i3-gaps)
+gaps inner 0
+gaps outer 0
+
+# Only enable gaps on a workspace when there is at least one container
+smart_gaps on
+
+# Enable popup during fullscreen
+popup_during_fullscreen smart
+
+# window focus follows your mouse movements as the mouse crosses window borders
+focus_follows_mouse no
+
+###############################################################################
+# i3 Colors and Fonts
+###############################################################################
+
+# Window Border color
+# class                 border      background  text        indicator   child_border
+client.focused_inactive #0d1010     #212121     #d9d9d9     #0d1010     #063340
+client.unfocused        #0d1010     #212121     #d9d9d9     #424242     #063340
+client.focused          #d9d9d9     #cecece     #000000     #d9d9d9     #d9d9d9
+client.urgent           #d9d9d9     #dc322f     #fdf6e3     #002b36     #d9d9d9
+
+
+# Sets i3 font for dialogs
+font pango:Source Code Pro Medium 13
+
+###############################################################################
+# i3 Bar
+###############################################################################
+
+# The bar configuration
+bar {
+    position bottom
+        mode dock
+        font pango:Source Code Pro Medium 13, Material Design Icons 13
+        separator_symbol " "
+        status_command i3xrocks -u ~/.config/regolith/i3xrocks/conf.d -d /etc/regolith/i3xrocks/conf.d
+        tray_output primary
+        strip_workspace_numbers yes
+
+        colors {
+            background #000000
+                statusline #FFFFFF
+                separator  #666666
+
+                focused_workspace  #4C7899 #285577 #FFFFFF
+                active_workspace   #333333 #222222 #FFFFFF
+                inactive_workspace #333333 #222222 #888888
+                urgent_workspace   #2F343A #900000 #FFFFFF
+                binding_mode       #2F343A #900000 #FFFFFF
+        }
+}
+
+###############################################################################
+# External programs launched with i3
+###############################################################################
+
+# Start the installed regolith-compositor
+exec_always --no-startup-id /usr/share/regolith-compositor/init
+
+# Start Rofication for notifications
+exec --no-startup-id /usr/bin/rofication-daemon
+
+# Launch first time user experience script
+exec --no-startup-id /usr/bin/regolith-ftue
+
+# Hide the mouse pointer if unused for a duration
+exec --no-startup-id /usr/bin/unclutter -b
+
+# Load nm-applet to provide auth dialogs for network access
+exec --no-startup-id /usr/bin/nm-applet
+
+# Load ulauncher
+exec --no-startup-id /usr/bin/ulauncher
+exec --no-startup-id /usr/bin/ulauncher-toggle
+
+###############################################################################
+# Common Mac key bindings
+###############################################################################
+
+#bindsym --release $alt+x exec xdotool key --clearmodifiers ctrl+x
+#bindsym --release $alt+c exec xdotool key --clearmodifiers ctrl+c
+#bindsym --release $alt+v exec xdotool key --clearmodifiers ctrl+v
+#bindsym --release $alt+z exec xdotool key --clearmodifiers ctrl+z
+#bindsym --release $alt+p exec xdotool key --clearmodifiers ctrl+p
+#bindsym --release $alt+a exec xdotool key --clearmodifiers ctrl+a
+#bindsym --release $alt+s exec xdotool key --clearmodifiers ctrl+s
+#bindsym --release $alt+t exec xdotool key --clearmodifiers ctrl+t
+#bindsym --release $alt+w exec xdotool key --clearmodifiers ctrl+w
+#bindsym --release $alt+n exec xdotool key --clearmodifiers ctrl+n
+#bindsym --release $alt+q exec xdotool key --clearmodifiers ctrl+q
+#bindsym --release $alt+f exec xdotool key --clearmodifiers ctrl+f
+#bindsym --release $alt+Shift+t exec xdotool key --clearmodifiers ctrl+shift+t
+
+bindsym $alt+Shift+3 exec slurp | grim -g - $(xdg-user-dir DESKTOP)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png') 
+bindsym $alt+Shift+4 exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir DESKTOP)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png') 
