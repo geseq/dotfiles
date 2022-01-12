@@ -333,6 +333,25 @@ exec --no-startup-id /usr/bin/ulauncher
 exec --no-startup-id /usr/bin/ulauncher-toggle
 
 ###############################################################################
+# Hardware
+###############################################################################
+
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+
+output "*" {
+    # For high DPI screens
+    scale 2
+}
+
+# Run swaymsg -t get_outputs to find the displays and set something like:
+# output HDMI1 pos 0 0 res 1920x1080
+# output eDP1 pos 1920 0 res 1600x900 
+
+
+###############################################################################
 # Common Mac key bindings
 ###############################################################################
 
