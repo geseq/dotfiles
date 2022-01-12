@@ -40,6 +40,7 @@ sudo apt install -y fzf ripgrep fd-find
 sudo apt install -y tmux
 sudo apt install -y zsh
 sudo apt install -y gnupg software-properties-common
+sudo apt install -y jq
 
 # lazygit
 sudo add-apt-repository -y ppa:lazygit-team/release && sudo apt update
@@ -63,6 +64,11 @@ sudo apt update && sudo apt install -y terraform
 sudo add-apt-repository -y ppa:agornostal/ulauncher
 sudo apt update && sudo apt install -y ulauncher
 systemctl --user enable --now ulauncher
+
+# sway
+sudo apt install -y sway
+# grim and slurp for screenshots in sway
+sudo apt install -y grim slurp
 
 # regolith
 sudo add-apt-repository -y ppa:regolith-linux/stable
