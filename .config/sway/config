@@ -323,11 +323,13 @@ input type:touchpad {
     natural_scroll enabled
 }
 
+# X
 output "Sharp Corporation 0x14FA 0x00000000" {
     scale 1.5
     pos 0 1200
 }
 
+# 5
 output "DP-3" {
     scale 1
     pos 2560 0 
@@ -357,6 +359,3 @@ output "DP-3" {
 
 bindsym $alt+Shift+3 exec slurp | grim -g - $(xdg-user-dir DESKTOP)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png') 
 bindsym $alt+Shift+4 exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir DESKTOP)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png') 
-
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl set +5%
