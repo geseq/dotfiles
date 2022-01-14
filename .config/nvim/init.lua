@@ -46,6 +46,7 @@ require('packer').startup{
     use 'hrsh7th/cmp-nvim-lsp'
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
+    use 'windwp/nvim-autopairs'
     use 'fatih/vim-go'
   end,
   config = {
@@ -139,6 +140,9 @@ vim.g.indent_blankline_show_trailing_blankline_indent = false
 
 require('nvim-web-devicons').setup {}
 
+-- Autopairs
+require('nvim-autopairs').setup{}
+
 -- Gitsigns
 require('gitsigns').setup {
   signs = {
@@ -194,12 +198,14 @@ vim.api.nvim_set_keymap('t', '<C-l>', [[<C-\><C-N><C-w>l]], { noremap = true, si
 -- Custom movement keys (s for left and , for down) in addition to hj
 vim.api.nvim_set_keymap('', ',', 'j', { noremap = true })
 vim.api.nvim_set_keymap('', 's', 'h', { noremap = true })
+-- TEMPORARY: remove h and j bindings for practice
+vim.api.nvim_set_keymap('', 'j', '', { noremap = true })
+vim.api.nvim_set_keymap('', 'h', '', { noremap = true })
 
 -- Explore with -
 vim.api.nvim_set_keymap('n', '-', [[:Explore<CR>]], { noremap = true, silent = true })
 
--- Remap escape to jk and <Leader>e
-vim.api.nvim_set_keymap('i', '<leader>e', [[<Esc>]], { noremap = true, silent = true })
+-- Remap escape to <sseader><space>
 vim.api.nvim_set_keymap('i', '<leader><space>', [[<Esc>]], { noremap = true, silent = true })
 
 if vim.fn.has('unix') then
