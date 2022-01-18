@@ -67,9 +67,10 @@ sudo apt update && sudo apt install -y ulauncher
 systemctl --user enable --now ulauncher
 
 # sway
-sudo apt install -y sway wdisplays swayidle swaylock
+sudo apt install -y sway wdisplays swayidle swaylock xdg-desktop-portal-wlr
 # grim and slurp for screenshots in sway
 sudo apt install -y grim slurp
+
 
 # regolith
 sudo add-apt-repository -y ppa:regolith-linux/stable
