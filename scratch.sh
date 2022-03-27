@@ -1,25 +1,25 @@
 #!/bin/bash
 
-set -x
+set -x -e
 
 sudo -v
 
-# Privacy settings https://askubuntu.com/questions/1027532/how-to-opt-out-of-system-information-reports
-ubuntu-report -f send no
-sudo apt purge ubuntu-report popularity-contest apport whoopsie
+export DEBIAN_FRONTEND=noninteractive
+
+sudo apt -y purge apport
 
 # Update and install necessary components
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 
 # codecs
 sudo apt install -y ubuntu-restricted-extras
 
 # battery
-sudo apt install tlp tlp-rdw
+sudo apt install -y tlp tlp-rdw
 sudo tlp start
 
 # cleanup
-sudo apt autoremove
+sudo apt autoremove -y
 
 # privacy focused hosts file
 curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts | sudo tee -a /etc/hosts
@@ -34,7 +34,7 @@ sudo apt install -y ufw
 sudo ufw enable
 
 #development tools
-sudo apt install -y wget vim neovim curl xclip
+sudo apt install -y wget vim neovim curl pkg-config
 sudo snap install --classic go
 sudo apt install -y fzf ripgrep fd-find
 sudo apt install -y tmux
@@ -44,8 +44,7 @@ sudo apt install -y jq
 sudo apt install -y network-manager
 
 # lazygit
-sudo add-apt-repository -y ppa:lazygit-team/release && sudo apt update
-sudo apt install -y lazygit
+go install github.com/jesseduffield/lazygit@latest
  
 # fonts
 sudo apt install -y fonts-firacode
@@ -61,25 +60,16 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository -y "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt update && sudo apt install -y terraform
 
+# sway
+sudo apt install -y sway wdisplays swayidle swaylock xdg-desktop-portal-wlr
+
 # ulauncher
 sudo add-apt-repository -y ppa:agornostal/ulauncher
 sudo apt update && sudo apt install -y ulauncher
 systemctl --user enable --now ulauncher
 
-# sway
-sudo apt install -y sway wdisplays swayidle swaylock xdg-desktop-portal-wlr
 # grim and slurp for screenshots in sway
 sudo apt install -y grim slurp
-
-
-# regolith
-sudo add-apt-repository -y ppa:regolith-linux/stable
-sudo apt install -y regolith-desktop-minimal
-sudo apt install regolith-look-ubuntu
-regolith-look set ubuntu
-regolith-look refresh
-sudo apt purge remontoire -y
-sudo apt install -y i3xrocks-time i3xrocks-volume 
 
 # blueman
 sudo apt install -y blueman

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+set -x -e
 
 # Determine OS
 unameOut="$(uname -s)"
@@ -12,7 +12,14 @@ esac
 
 # OS specific installation
 if [ $machine = "Linux" ]; then
-    ./linux.sh
+    flavor="$(cat /var/log/installer/media-info | cut -f 1 -d ' ' | xargs)"
+    echo $flavor;
+    if [ $flavor = "Ubuntu-Server" ]; then
+        ./scratch.sh
+    else
+        ./linux.sh
+    fi
+    exit;
 elif [ $1 = "Mac" ]; then
     ./mac.sh
 else
