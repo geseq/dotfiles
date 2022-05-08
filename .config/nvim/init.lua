@@ -210,9 +210,6 @@ vim.api.nvim_set_keymap('', 'h', '', { noremap = true })
 -- Explore with -
 vim.api.nvim_set_keymap('n', '-', [[:Explore<CR>]], { noremap = true, silent = true })
 
--- Remap escape to <sseader><space>
-vim.api.nvim_set_keymap('i', '<leader><space>', [[<Esc>]], { noremap = true, silent = true })
-
 if vim.fn.has('unix') then
     vim.api.nvim_set_keymap('v', '<leader>cc', '"+y', {})
 elseif vim.fn.has('macunix') then
