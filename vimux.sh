@@ -68,4 +68,6 @@ if [[ $machine == "Linux" ]]; then
     cp -r ./.config/* ~/.config
 fi
 
+cp -r ./.cargo/* ~/.cargo
+
 nvim -c ":PackerInstall"

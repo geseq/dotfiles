@@ -346,6 +346,7 @@ brew install vim
 brew install yubikey-agent
 brew install terraform
 brew install clipper
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font font-fira-code
