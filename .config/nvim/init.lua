@@ -250,7 +250,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { 'gopls' }
+local servers = { 'gopls', 'rust-analyzer' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -289,6 +289,18 @@ lspconfig.sumneko_lua.setup {
         enable = false,
       },
     },
+    ["rust-analyzer"] = {
+        assist = {
+            importGranularity = "module",
+            importPrefix = "self",
+        },
+        cargo = {
+            loadOutDirsFromCheck = true
+        },
+        procMacro = {
+            enable = true
+        },
+    }
  },
 }
 
