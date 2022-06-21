@@ -350,9 +350,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font font-fira-code
-brew install romkatv/powerlevel10k/powerlevel10k
-brew install zsh-autosuggestions
-brew install zsh-syntax-highlighting
 
 brew services start yubikey-agent
 brew services start clipper
