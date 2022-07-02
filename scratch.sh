@@ -11,6 +11,9 @@ sudo apt -y purge apport
 # Update and install necessary components
 sudo apt update && sudo apt upgrade -y
 
+# Other stuff
+sudo apt install -y xdg-utils
+
 # codecs
 sudo apt install -y ubuntu-restricted-extras
 
@@ -33,8 +36,12 @@ sudo apt install -y flameshot
 sudo apt install -y ufw
 sudo ufw enable
 
+# font awesome
+sudo apt install fonts-font-awesome
+
 #development tools
-sudo apt install -y wget vim neovim curl pkg-config
+sudo apt install -y wget vim curl pkg-config
+sudo snap install nvim --classic
 sudo apt install -y golang
 sudo apt install -y fzf ripgrep fd-find
 sudo apt install -y tmux
@@ -62,7 +69,7 @@ sudo apt-add-repository -y "deb [arch=amd64] https://apt.releases.hashicorp.com 
 sudo apt update && sudo apt install -y terraform
 
 # sway
-sudo apt install -y sway wdisplays swayidle swaylock xdg-desktop-portal-wlr
+sudo apt install -y sway wdisplays swayidle swaylock xdg-desktop-portal-wlr waybar
 
 # ulauncher
 sudo add-apt-repository -y ppa:agornostal/ulauncher
@@ -74,6 +81,13 @@ sudo apt install -y grim slurp
 
 # blueman
 sudo apt install -y blueman
+
+# firefox
+sudo apt install -y firefox
+
+# alacritty
+sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
+cargo install alacritty
 
 # yubikey-agent
 sudo apt -y install build-essential libpcsclite-dev pcscd
@@ -90,3 +104,14 @@ mkdir -p $HOME/.ssh
 echo "Host *" > $HOME/.ssh/config
 echo "    IdentityAgent ${XDG_RUNTIME_DIR}/yubikey-agent/yubikey-agent.sock" >> $HOME/.ssh/config
 echo "    VisualHostKey yes" >> $HOME/.ssh/config
+
+# Use network-manager
+sudo rm /etc/netplan/*.yaml
+sudo cat >> /etc/netplan/01-network-manager-all.yaml <<"EOT"
+network:
+  version: 2
+  renderer: NetworkManager
+EOT
+
+sudo netplan generate
+sudo netplan apply
