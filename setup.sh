@@ -19,7 +19,6 @@ if [ $machine = "Linux" ]; then
     else
         ./linux.sh
     fi
-    exit;
 elif [ $1 = "Mac" ]; then
     ./mac.sh
 else
