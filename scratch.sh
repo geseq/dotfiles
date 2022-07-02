@@ -35,7 +35,7 @@ sudo ufw enable
 
 #development tools
 sudo apt install -y wget vim neovim curl pkg-config
-sudo snap install --classic go
+sudo apt install -y golang
 sudo apt install -y fzf ripgrep fd-find
 sudo apt install -y tmux
 sudo apt install -y zsh
