@@ -66,7 +66,7 @@ sudo apt-add-repository -y "deb [arch=amd64] https://apt.releases.hashicorp.com 
 sudo apt update && sudo apt install -y terraform
 
 # sway
-sudo apt install -y sway wdisplays swayidle swaylock xdg-desktop-portal-wlr
+sudo apt install -y sway wdisplays swayidle swaylock xdg-desktop-portal-wlr waybar
 
 # ulauncher
 sudo add-apt-repository -y ppa:agornostal/ulauncher
