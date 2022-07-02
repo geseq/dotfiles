@@ -36,6 +36,9 @@ sudo apt install -y flameshot
 sudo apt install -y ufw
 sudo ufw enable
 
+# font awesome
+sudo apt install fonts-font-awesome
+
 #development tools
 sudo apt install -y wget vim curl pkg-config
 sudo snap install nvim --classic
