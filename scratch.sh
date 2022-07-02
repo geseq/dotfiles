@@ -11,6 +11,9 @@ sudo apt -y purge apport
 # Update and install necessary components
 sudo apt update && sudo apt upgrade -y
 
+# Other stuff
+sudo apt install -y xdg-utils
+
 # codecs
 sudo apt install -y ubuntu-restricted-extras
 
@@ -34,7 +37,8 @@ sudo apt install -y ufw
 sudo ufw enable
 
 #development tools
-sudo apt install -y wget vim neovim curl pkg-config
+sudo apt install -y wget vim curl pkg-config
+sudo snap install nvim --classic
 sudo apt install -y golang
 sudo apt install -y fzf ripgrep fd-find
 sudo apt install -y tmux
@@ -74,6 +78,13 @@ sudo apt install -y grim slurp
 
 # blueman
 sudo apt install -y blueman
+
+# firefox
+sudo apt install -y firefox
+
+# alacritty
+sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
+cargo install alacritty
 
 # yubikey-agent
 sudo apt -y install build-essential libpcsclite-dev pcscd
