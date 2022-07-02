@@ -101,3 +101,14 @@ mkdir -p $HOME/.ssh
 echo "Host *" > $HOME/.ssh/config
 echo "    IdentityAgent ${XDG_RUNTIME_DIR}/yubikey-agent/yubikey-agent.sock" >> $HOME/.ssh/config
 echo "    VisualHostKey yes" >> $HOME/.ssh/config
+
+# Use network-manager
+sudo rm /etc/netplan/*.yaml
+sudo cat >> /etc/netplan/01-network-manager-all.yaml <<"EOT"
+network:
+  version: 2
+  renderer: NetworkManager
+EOT
+
+sudo netplan generate
+sudo netplan apply
