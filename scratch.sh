@@ -6,7 +6,12 @@ sudo -v
 
 export DEBIAN_FRONTEND=noninteractive
 
+# Cleanup
 sudo apt -y purge apport
+sudo apt -y purge cloud-init
+sudo apt -y purge lxd-agent-loader
+sudo apt -y purge byobu
+sudo rm -rf /etc/cloud && sudo rm -rf /var/lib/cloud
 
 # Update and install necessary components
 sudo apt update && sudo apt upgrade -y
