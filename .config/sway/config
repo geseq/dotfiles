@@ -44,7 +44,7 @@ set $ws10_key 0
 ###############################################################################
 
 ## Launch // Terminal // <>> Enter ##
-bindsym $alt+Return exec /usr/bin/x-terminal-emulator
+bindsym $alt+Return exec ~/.cargo/bin/alacritty
 
 ## Launch // Browser // <>>Shift> Enter ##
 bindsym $alt+Shift+Return exec "gtk-launch $(xdg-settings get default-web-browser)"
