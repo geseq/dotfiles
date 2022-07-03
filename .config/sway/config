@@ -313,6 +313,9 @@ exec --no-startup-id /usr/bin/unclutter -b
 # Load nm-applet to provide auth dialogs for network access
 exec --no-startup-id /usr/bin/nm-applet
 
+# Load blueman-applet to provide bluetooth info
+exec --no-startup-id /usr/bin/blueman-applet
+
 # Load ulauncher
 exec --no-startup-id /usr/bin/ulauncher
 exec --no-startup-id /usr/bin/ulauncher-toggle
