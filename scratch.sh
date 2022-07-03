@@ -113,6 +113,8 @@ echo "network:
   renderer: NetworkManager
 " | sudo tee -a /etc/netplan/01-network-manager-all.yaml > /dev/null
 
+echo 'export MOZ_ENABLE_WAYLAND=1' | sudo tee -a /etc/profile > /dev/null
+
 sudo netplan generate
 sudo netplan apply
 
