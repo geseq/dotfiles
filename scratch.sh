@@ -23,6 +23,7 @@ sudo apt install -y ubuntu-restricted-extras
 
 # battery
 sudo apt install -y tlp tlp-rdw
+sudo systemctl enable tlp.service
 sudo tlp start
 
 # cleanup
