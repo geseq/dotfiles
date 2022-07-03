@@ -120,3 +120,5 @@ EOT
 
 sudo netplan generate
 sudo netplan apply
+
+reboot
