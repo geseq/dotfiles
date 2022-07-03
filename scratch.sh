@@ -55,6 +55,7 @@ sudo apt install -y gnupg software-properties-common
 sudo apt install -y jq
 sudo apt install -y network-manager
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source ~/.profile
 
 # lazygit
 go install github.com/jesseduffield/lazygit@latest
