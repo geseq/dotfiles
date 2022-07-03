@@ -24,9 +24,3 @@ elif [ $1 = "Mac" ]; then
 else
     echo "Invaild OS detected"
 fi
-
-# Setup shell
-./shell.sh
-
-# Setup vim and tmux
-./vimux.sh
