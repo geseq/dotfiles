@@ -91,10 +91,6 @@ sudo apt install -y blueman
 # firefox
 sudo apt install -y firefox
 
-# alacritty
-sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
-cargo install alacritty
-
 # yubikey-agent
 sudo apt -y install build-essential libpcsclite-dev pcscd
 git clone https://filippo.io/yubikey-agent
