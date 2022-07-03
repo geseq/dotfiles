@@ -113,11 +113,10 @@ echo "    VisualHostKey yes" >> $HOME/.ssh/config
 
 # Use network-manager
 sudo rm /etc/netplan/*.yaml
-sudo cat >> /etc/netplan/01-network-manager-all.yaml <<"EOT"
-network:
+echo "network:
   version: 2
   renderer: NetworkManager
-EOT
+" | sudo tee -a /etc/netplan/01-network-manager-all.yaml > /dev/null
 
 sudo netplan generate
 sudo netplan apply
