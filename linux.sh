@@ -34,10 +34,10 @@ sudo apt install -y ufw
 sudo ufw enable
 
 #development tools
-sudo apt install -y wget vim neovim curl xclip
+sudo apt install -y wget vim curl pkg-config
+sudo snap install nvim --classic
 sudo apt install -y golang
 sudo apt install -y fzf ripgrep fd-find
-sudo apt install -y tmux
 sudo apt install -y zsh
 sudo apt install -y gnupg software-properties-common
 sudo apt install -y jq
@@ -45,8 +45,7 @@ sudo apt install -y network-manager
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # lazygit
-sudo add-apt-repository -y ppa:lazygit-team/release && sudo apt update
-sudo apt install -y lazygit
+go install github.com/jesseduffield/lazygit@latest
  
 # fonts
 sudo apt install -y fonts-firacode
@@ -68,19 +67,23 @@ sudo apt update && sudo apt install -y ulauncher
 systemctl --user enable --now ulauncher
 
 # sway
-sudo apt install -y sway wdisplays swayidle swaylock xdg-desktop-portal-wlr
+sudo apt install -y sway wdisplays swayidle swaylock xdg-desktop-portal-wlr waybar
 # grim and slurp for screenshots in sway
 sudo apt install -y grim slurp
 
 
 # regolith
-sudo add-apt-repository -y ppa:regolith-linux/stable
-sudo apt install -y regolith-desktop-minimal
-sudo apt install regolith-look-ubuntu
-regolith-look set ubuntu
-regolith-look refresh
-sudo apt purge remontoire -y
-sudo apt install -y i3xrocks-time i3xrocks-volume 
+#sudo add-apt-repository -y ppa:regolith-linux/stable
+#sudo apt install -y regolith-desktop-minimal
+#sudo apt install regolith-look-ubuntu
+#regolith-look set ubuntu
+#regolith-look refresh
+#sudo apt purge remontoire -y
+#sudo apt install -y i3xrocks-time i3xrocks-volume 
+
+# alacritty
+sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
+cargo install alacritty
 
 # blueman
 sudo apt install -y blueman
