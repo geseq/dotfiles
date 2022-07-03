@@ -10,7 +10,6 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt -y purge apport
 sudo apt -y purge cloud-init
 sudo apt -y purge lxd-agent-loader
-sudo apt -y purge byobu
 sudo rm -rf /etc/cloud && sudo rm -rf /var/lib/cloud
 
 # Update and install necessary components
@@ -91,10 +90,6 @@ sudo apt install -y blueman
 # firefox
 sudo apt install -y firefox
 
-# alacritty
-sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3
-cargo install alacritty
-
 # yubikey-agent
 sudo apt -y install build-essential libpcsclite-dev pcscd
 git clone https://filippo.io/yubikey-agent
@@ -120,5 +115,8 @@ echo "network:
 
 sudo netplan generate
 sudo netplan apply
+
+# More cleanup
+sudo apt -y purge byobu tilix
 
 reboot
