@@ -314,6 +314,9 @@ exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/ulauncher
 exec --no-startup-id /usr/bin/ulauncher-toggle
 
+# Fix slow load of apps
+exec systemctl --user import-environment
+
 ###############################################################################
 # Hardware
 ###############################################################################
