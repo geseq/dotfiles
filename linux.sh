@@ -47,6 +47,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # lazygit
 go install github.com/jesseduffield/lazygit@latest
  
+# font awesome
+sudo apt install fonts-font-awesome
+
 # fonts
 sudo apt install -y fonts-firacode
 
