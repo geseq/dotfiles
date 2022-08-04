@@ -178,7 +178,7 @@ hide_edge_borders smart
 bindsym $alt+q [con_id="__focused__"] kill
 
 ## Logout / Lock
-bindsym $alt+Shift+q exec swaymsg exit
+bindsym $alt+Ctrl+q exec swaymsg exit
 
 ## Session // Refresh sway config // <Alt><Shift> r ##
 bindsym $mod+Shift+r reload
