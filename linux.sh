@@ -104,5 +104,6 @@ systemctl --user enable --now yubikey-agent
 
 mkdir -p $HOME/.ssh
 echo "Host *" > $HOME/.ssh/config
+echo "    SetEnv TERM=xterm" >> $HOME/.ssh/config
 echo "    IdentityAgent ${XDG_RUNTIME_DIR}/yubikey-agent/yubikey-agent.sock" >> $HOME/.ssh/config
 echo "    VisualHostKey yes" >> $HOME/.ssh/config
