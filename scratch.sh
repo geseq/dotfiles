@@ -84,6 +84,10 @@ sudo add-apt-repository -y ppa:agornostal/ulauncher
 sudo apt update && sudo apt install -y ulauncher
 systemctl --user enable --now ulauncher
 
+# light
+sudo apt install light
+sudo chmod +s /usr/bin/light
+
 # grim and slurp for screenshots in sway
 sudo apt install -y grim slurp
 

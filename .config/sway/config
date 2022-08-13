@@ -196,6 +196,10 @@ bindsym $mod+b exec gnome-control-center --class=floating_window bluetooth
 ## Launch // Notification Viewer // <Alt> n ##
 bindsym $mod+n exec /usr/bin/rofication-gui
 
+## Brightness controls
+bindsym --locked XF86MonBrightnessUp exec light -A 10 && light -O
+bindsym --locked XF86MonBrightnessDown exec light -U 10 && light -O
+
 ###############################################################################
 # Workspace Management
 ###############################################################################
