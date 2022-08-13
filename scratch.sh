@@ -97,8 +97,6 @@ sudo apt install -y blueman
 # firefox
 sudo apt install -y firefox
 
-
-
 # yubikey-agent
 sudo apt -y install build-essential libpcsclite-dev pcscd
 git clone https://filippo.io/yubikey-agent
