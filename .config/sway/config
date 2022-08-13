@@ -200,6 +200,12 @@ bindsym $mod+n exec /usr/bin/rofication-gui
 bindsym --locked XF86MonBrightnessUp exec light -A 10 && light -O
 bindsym --locked XF86MonBrightnessDown exec light -U 10 && light -O
 
+## Volume controls
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
 ###############################################################################
 # Workspace Management
 ###############################################################################
