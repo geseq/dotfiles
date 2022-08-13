@@ -4,17 +4,55 @@
     "mode": "dock",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "battery", "clock", "tray"],
+    "modules-right": ["temperature", "cpu", "memory", "backlight", "pulseaudio", "battery", "clock", "tray"],
     "sway/window": {
         "max-length": 50
     },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
-    },
+	"cpu": {
+		"format": "🏭 {usage}%",
+		"tooltip": false
+	},
+	"memory": {
+		"format": "💾 {used:0.1f}G"
+	},
+	"backlight": {
+		// "device": "acpi_video1",
+		"format": "{icon} {percent}%",
+		"format-icons": ["🔅", "🔆"]
+	},
+	"battery": {
+		"states": {
+			"warning": 20,
+			"critical": 10
+		},
+		"format": "<span color='#e88939'>{icon}</span> {capacity}% ({time})",
+		"format-charging": "<span color='#e88939'> </span> {capacity}%",
+		"format-plugged":  "<span color='#e88939'>{icon} </span> {capacity}% ({time})",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"pulseaudio": {
+		// "scroll-step": 1, // %, can be a float
+		"format": "{icon} {volume}% {format_source}",
+		"format-muted": "🔇 {format_source}",
+		"format-bluetooth": "{icon} {volume}% {format_source}",
+		"format-bluetooth-muted": "🔇 {format_source}",
+
+		"format-source": " {volume}%",
+		"format-source-muted": "",
+
+		"format-icons": {
+			"headphones": "",
+			"handsfree": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["🔈", "🔉", "🔊"]
+		},
+	},
+	"clock": {
+		"format": "⏰ {:%Y-%m-%d | %H:%M}",
+	},
     "tray": {
         "icon-size": 19,
         "spacing": 10
