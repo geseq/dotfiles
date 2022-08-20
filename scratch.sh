@@ -45,6 +45,7 @@ sudo ufw enable
 sudo apt install fonts-font-awesome
 
 #development tools
+sudo apt install -y fuse
 sudo apt install -y wget vim curl pkg-config wl-clipboard
 sudo snap install nvim --classic
 sudo apt install -y golang
