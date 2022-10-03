@@ -115,6 +115,8 @@ echo "    SetEnv TERM=xterm" >> $HOME/.ssh/config
 echo "    IdentityAgent ${XDG_RUNTIME_DIR}/yubikey-agent/yubikey-agent.sock" >> $HOME/.ssh/config
 echo "    VisualHostKey yes" >> $HOME/.ssh/config
 
+git config --global push.autoSetupRemote true
+
 # Use network-manager
 sudo rm /etc/netplan/*.yaml
 echo "network:
