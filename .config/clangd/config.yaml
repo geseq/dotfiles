@@ -1,0 +1,8 @@
+CompileFlags:
+  Add: [-xc++, -std=c++17, -stdlib=libc++, -Wno-missing-prototypes, -Wno-gnu-zero-variadic-macro-arguments]
+  Remove: [-mabi, -fdiagnostics-urls=always]
+Diagnostics:
+  ClangTidy:
+    Add: [performance*, modernize*]
+    Remove: [modernize-use-trailing-return-type]
+

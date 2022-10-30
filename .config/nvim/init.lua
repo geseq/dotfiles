@@ -246,11 +246,10 @@ local on_attach = function(_, bufnr)
 end
 
 -- nvim-cmp supports additional completion capabilities
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Enable the following language servers
-local servers = { 'gopls', 'rust_analyzer' }
+local servers = { 'gopls', 'rust_analyzer', 'clangd'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -308,7 +307,6 @@ lspconfig.sumneko_lua.setup {
     },
   },
 }
-
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect'

@@ -26,8 +26,13 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 
+#c++
+# C++
+export CPM_SOURCE_CACHE=$HOME/.cache/CPM
+export CXX=clang++
+
 # set default editor
-export EDITOR=vim
+export EDITOR=nvim
 # this will fix bindings on tmux
 bindkey -e
 
@@ -46,6 +51,7 @@ setopt EXTENDED_HISTORY
 
 # aliases
 alias zr='source $HOME/.zshrc'
+alias ze='nvim $HOME/.zshrc'
 alias lg='lazygit'
 
 # functions
