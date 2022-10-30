@@ -53,6 +53,8 @@ setopt EXTENDED_HISTORY
 alias zr='source $HOME/.zshrc'
 alias ze='nvim $HOME/.zshrc'
 alias lg='lazygit'
+alias cx='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
+
 
 # functions
 ds() { docker stop $(docker ps -a -q);  }
