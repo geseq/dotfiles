@@ -56,7 +56,7 @@ sudo apt install -y gnupg software-properties-common
 sudo apt install -y jq
 sudo apt install -y network-manager
 bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-sudo apt install -y clang clang-tools libclang-dev make cmake libc++-dev clangd clang-tidy
+sudo apt install -y clang clang-tools libclang-dev make cmake libc++-dev clangd clang-tidy clang-format
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # set clang as default
