@@ -48,6 +48,7 @@ require('packer').startup{
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
     use 'windwp/nvim-autopairs'
     use 'fatih/vim-go'
+    use 'rhysd/vim-clang-format'
   end,
   config = {
     -- Move to lua dir so impatient.nvim can cache it
@@ -279,6 +280,17 @@ lspconfig.rust_analyzer.setup {
     }
   }
 }
+
+lspconfig.sumneko_lua.setup {
+  cmd = { 
+    '/usr/bin/clangd',
+    '--background-index',
+    '--clang-tidy',
+    '--completion-style=bundled',
+    '--cross-file-rename',
+    '--header-insertion=iwyu',
+  },
+} 
 
 lspconfig.sumneko_lua.setup {
   cmd = { '/usr/local/bin/lua-language-server' },
