@@ -18,17 +18,22 @@ alt_send_esc: false
 # setup font
 font:
   normal: 
-    family: FiraCode Nerd Font
+    family: SourceCodePro
     style: Regular
   bold: 
-    family: FiraCode Nerd Font
+    family: SourceCodePro
     style: Bold
   italic: 
-    family: FiraCode Nerd Font
+    family: SourceCodePro
     style: Italic
   bold_italic: 
-    family: FiraCode Nerd Font
+    family: SourceCodePro
     style: Bold Italic
+  size: 13.0
+  offset:
+    x: 1
+
+use_thin_strokes: false
 
 key_bindings:
   - { key: A,         mods: Alt,       chars: "\x1ba"                       }
