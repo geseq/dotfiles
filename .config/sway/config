@@ -44,7 +44,7 @@ set $ws10_key 0
 ###############################################################################
 
 ## Launch // Terminal // <>> Enter ##
-bindsym $alt+Return exec /usr/bin/foot
+bindsym $alt+Return exec LIBGL_ALWAYS_SOFTWARE=1 /usr/bin/x-terminal-emulator
 
 ## Launch // Browser // <>>Shift> Enter ##
 bindsym $alt+Shift+Return exec "gtk-launch $(xdg-settings get default-web-browser)"
@@ -178,7 +178,7 @@ hide_edge_borders smart
 bindsym $alt+q [con_id="__focused__"] kill
 
 ## Logout / Lock
-bindsym $alt+Ctrl+q exec swaymsg exit
+bindsym $alt+Ctrl+q exec swaymsg exit && systemctl suspend
 
 ## Session // Refresh sway config // <Alt><Shift> r ##
 bindsym $mod+Shift+r reload
@@ -197,8 +197,8 @@ bindsym $mod+b exec gnome-control-center --class=floating_window bluetooth
 bindsym $mod+n exec /usr/bin/rofication-gui
 
 ## Brightness controls
-bindsym --locked XF86MonBrightnessUp exec light -A 10 && light -O
-bindsym --locked XF86MonBrightnessDown exec light -U 10 && light -O
+bindsym --locked XF86MonBrightnessUp exec light -A 5 && light -O
+bindsym --locked XF86MonBrightnessDown exec light -U 5 && light -O
 
 ## Volume controls
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -293,7 +293,7 @@ client.urgent           #d9d9d9     #dc322f     #fdf6e3     #002b36     #d9d9d9
 
 
 # Sets i3 font for dialogs
-font pango:Source Code Pro Medium 13
+font pango:SourceCodePro 13
 
 ###############################################################################
 # i3 Bar
@@ -309,7 +309,7 @@ bar {
 ###############################################################################
 
 # Fix for pinentry
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
 
 # Start the installed regolith-compositor
 exec_always --no-startup-id /usr/share/regolith-compositor/init
@@ -346,9 +346,16 @@ input type:touchpad {
 }
 
 # X
-output "Sharp Corporation 0x14FA 0x00000000" {
-    scale 1.5
+output "Sharp Corporation 0x1551 0x00000000" {
+    scale 1
     pos 0 1200
+    subpixel rgb
+}
+
+output "eDP-1" {
+    scale 1
+    pos 0 1200
+    subpixel rgb
 }
 
 # 5
@@ -381,3 +388,6 @@ output "DP-3" {
 
 bindsym $alt+Shift+3 exec slurp | grim -g - $(xdg-user-dir DESKTOP)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png') 
 bindsym $alt+Shift+4 exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir DESKTOP)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png') 
+
+
+exec sway-session restore && sway-session save-loop

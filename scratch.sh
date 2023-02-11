@@ -69,6 +69,15 @@ go install github.com/jesseduffield/lazygit@latest
  
 # fonts
 sudo apt install -y fonts-firacode
+sudo apt install -y fonts-powerline
+scpversion=1.010
+rm -f SourceCodePro_FontsOnly-$scpversion.zip
+rm -rf SourceCodePro_FontsOnly-$scpversion
+wget https://github.com/downloads/adobe/source-code-pro/SourceCodePro_FontsOnly-$scpversion.zip -O SourceCodePro_FontsOnly-$scpversion.zip
+unzip SourceCodePro_FontsOnly-$scpversion.zip
+mkdir -p ~/.local/share/fonts
+cp SourceCodePro_FontsOnly-$scpversion/OTF/*.otf ~/.local/share/fonts/
+sudo fc-cache -f -v
 
 # docker
 sudo apt install -y apt-transport-https ca-certificates lsb-release

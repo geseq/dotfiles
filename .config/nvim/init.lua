@@ -131,6 +131,8 @@ vim.cmd [[
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
+
+  autocmd FileType c,cpp,hpp ClangFormatAutoEnable
 ]]
 
 --Map blankline
@@ -281,7 +283,7 @@ lspconfig.rust_analyzer.setup {
   }
 }
 
-lspconfig.sumneko_lua.setup {
+lspconfig.clangd.setup {
   cmd = { 
     '/usr/bin/clangd',
     '--background-index',
@@ -401,3 +403,5 @@ vim.g.go_info_mode='gopls'
 
 vim.g.terraform_align=1
 vim.g.terraform_fmt_on_save=1
+
+
