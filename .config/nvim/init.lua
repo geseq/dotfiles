@@ -206,9 +206,6 @@ vim.api.nvim_set_keymap('t', '<C-l>', [[<C-\><C-N><C-w>l]], { noremap = true, si
 -- Custom movement keys (s for left and , for down) in addition to hj
 vim.api.nvim_set_keymap('', ',', 'j', { noremap = true })
 vim.api.nvim_set_keymap('', 's', 'h', { noremap = true })
--- TEMPORARY: remove h and j bindings for practice
-vim.api.nvim_set_keymap('', 'j', '', { noremap = true })
-vim.api.nvim_set_keymap('', 'h', '', { noremap = true })
 
 -- Explore with -
 vim.api.nvim_set_keymap('n', '-', [[:Explore<CR>]], { noremap = true, silent = true })
