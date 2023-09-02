@@ -345,6 +345,10 @@ input type:touchpad {
     natural_scroll enabled
 }
 
+input type:keyboard {
+    xkb_options caps:escape
+}
+
 # X
 output "Sharp Corporation 0x1551 0x00000000" {
     scale 1
