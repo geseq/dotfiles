@@ -181,7 +181,7 @@ bindsym $alt+q [con_id="__focused__"] kill
 bindsym $alt+Ctrl+q exec swaymsg exit && systemctl suspend
 
 ## Session // Refresh sway config // <Alt><Shift> r ##
-bindsym $mod+Shift+r reload
+bindsym $alt+Shift+r reload
 
 ###############################################################################
 # System Management
@@ -192,9 +192,6 @@ bindsym $mod+d exec wdisplays
 
 ## Modify // Bluetooth Settings // <Alt> b ##
 bindsym $mod+b exec gnome-control-center --class=floating_window bluetooth
-
-## Launch // Notification Viewer // <Alt> n ##
-bindsym $mod+n exec /usr/bin/rofication-gui
 
 ## Brightness controls
 bindsym --locked XF86MonBrightnessUp exec light -A 5 && light -O

@@ -30,8 +30,6 @@ font:
     family: SourceCodePro
     style: Bold Italic
   size: 13.0
-  offset:
-    x: 1
 
 use_thin_strokes: false
 
@@ -111,3 +109,10 @@ key_bindings:
   - { key: Key6,      mods: Alt|Shift, chars: "\x1b^"                       } # Alt + ^
   - { key: Backslash, mods: Alt,       chars: "\x1b\\"                      } # Alt + \
   - { key: Backslash, mods: Alt|Shift, chars: "\x1b|"                       } # Alt + |
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "zellij attach --index 0 --create"
