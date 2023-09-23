@@ -4,7 +4,7 @@ keybinds clear-defaults=true {
         bind "Ctrl p" { SwitchToMode "pane"; }
         bind "Alt r" { SwitchToMode "resize"; }
         bind "Ctrl t" { SwitchToMode "tab"; }
-        bind "Ctrl S" { SwitchToMode "scroll"; }
+        bind "Alt S" { SwitchToMode "scroll"; }
         bind "Ctrl o" { SwitchToMode "session"; }
         bind "Ctrl h" { SwitchToMode "move"; }
         bind "Ctrl b" { SwitchToMode "tmux"; }
@@ -96,7 +96,7 @@ keybinds clear-defaults=true {
         bind "Ctrl g" { SwitchToMode "locked"; }
         bind "Ctrl p" { SwitchToMode "pane"; }
         bind "Ctrl t" { SwitchToMode "tab"; }
-        bind "Ctrl n" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl n" "c" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
         bind "Ctrl S" { SwitchToMode "scroll"; }
         bind "Ctrl o" { SwitchToMode "session"; }
         bind "Ctrl h" { SwitchToMode "move"; }
@@ -125,7 +125,7 @@ keybinds clear-defaults=true {
         bind "Ctrl p" { SwitchToMode "pane"; }
         bind "Ctrl t" { SwitchToMode "tab"; }
         bind "Ctrl n" { SwitchToMode "resize"; }
-        bind "Ctrl h" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl h" "c" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
         bind "Ctrl S" { SwitchToMode "scroll"; }
         bind "Ctrl o" { SwitchToMode "session"; }
         bind "Ctrl q" { Quit; }
@@ -265,7 +265,7 @@ keybinds clear-defaults=true {
 //   - true
 //   - false (Default)
 //
-// simplified_ui true
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -282,12 +282,12 @@ keybinds clear-defaults=true {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-// theme "default"
+theme "default"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -333,7 +333,7 @@ keybinds clear-defaults=true {
 // Enable or disable automatic copy (and clear) of selection when releasing mouse
 // Default: true
 //
-// copy_on_select false
+copy_on_select false
 
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
@@ -354,6 +354,8 @@ keybinds clear-defaults=true {
 // The folder in which Zellij will look for themes
 //
 // theme_dir "/path/to/my/theme_dir"
+
+auto_layout false
 
 plugins {
     tab-bar { path "tab-bar"; }
