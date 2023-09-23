@@ -181,7 +181,7 @@ bindsym $mod+q [con_id="__focused__"] kill
 bindsym $mod+Ctrl+q exec swaymsg exit && systemctl suspend
 
 ## Session // Refresh sway config // <Alt><Shift> r ##
-bindsym $alt+Shift+r reload
+bindsym $mod+Shift+r reload
 
 ###############################################################################
 # System Management
