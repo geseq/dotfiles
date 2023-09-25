@@ -192,13 +192,10 @@ vim.api.nvim_set_keymap('n', '<leader>fa', [[<cmd>lua require('telescope.builtin
 -- Window movement with Ctrl+(hjkl)
 vim.api.nvim_set_keymap('n', '<C-j>', [[<C-w>j]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-h>', [[<C-w>h]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-s>', [[<C-w>h]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', [[<C-w>k]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', [[<C-w>l]], { noremap = true, silent = true })
--- <C-,> won't work due to https://vimhelp.org/vim_faq.txt.html#faq-20.5
 vim.api.nvim_set_keymap('t', '<C-j>', [[<C-\><C-N><C-w>j]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<C-h>', [[<C-\><C-N><C-w>h]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<C-s>', [[<C-\><C-N><C-w>h]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<C-k>', [[<C-\><C-N><C-w>k]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<C-l>', [[<C-\><C-N><C-w>l]], { noremap = true, silent = true })
 
