@@ -13,7 +13,8 @@ window:
   startup_mode: Maximized
 
 # fix alt keybindings on mac
-alt_send_esc: false
+window:
+  options_as_alt: true
 
 # setup font
 font:
