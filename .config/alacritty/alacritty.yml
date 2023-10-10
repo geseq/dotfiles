@@ -14,7 +14,7 @@ window:
 
 # fix alt keybindings on mac
 window:
-  options_as_alt: true
+  option_as_alt: Both
 
 # setup font
 font:
