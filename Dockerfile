@@ -3,9 +3,10 @@ FROM ubuntu:latest
 ENV HOME /home/dev
 WORKDIR /home/dev
 
-RUN apt update && \
+RUN apt update && apt install -y software-properties-common && \
+    add-apt-repository -y ppa:neovim-ppa/stable && apt update && \
     apt install -y wget vim curl pkg-config neovim golang fzf ripgrep fd-find && \
-    apt install -y zsh ssh gnupg software-properties-common jq && \
+    apt install -y zsh ssh gnupg jq && \
     bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)" && \
     apt install -y clang clang-tools libclang-dev make cmake libc++-dev clangd clang-tidy clang-format && \
     update-alternatives --config cc
