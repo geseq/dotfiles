@@ -4,7 +4,7 @@ ENV HOME /home/dev
 WORKDIR /home/dev
 
 RUN apt update && apt install -y software-properties-common && \
-    add-apt-repository -y ppa:neovim-ppa/stable && apt update && \
+    add-apt-repository -y ppa:neovim-ppa/unstable && apt update && \
     apt install -y wget vim curl pkg-config neovim golang fzf ripgrep fd-find && \
     apt install -y zsh ssh gnupg jq && \
     bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)" && \
