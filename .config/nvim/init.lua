@@ -288,7 +288,7 @@ lspconfig.clangd.setup {
   },
 } 
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
   cmd = { '/usr/local/bin/lua-language-server' },
   on_attach = on_attach,
   capabilities = capabilities,
