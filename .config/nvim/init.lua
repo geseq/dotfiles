@@ -49,6 +49,7 @@ require('packer').startup{
     use 'windwp/nvim-autopairs'
     use 'fatih/vim-go'
     use 'rhysd/vim-clang-format'
+    use 'ojroques/nvim-osc52'
   end,
   config = {
     -- Move to lua dir so impatient.nvim can cache it
@@ -208,7 +209,8 @@ vim.api.nvim_set_keymap('', 's', 'h', { noremap = true })
 vim.api.nvim_set_keymap('n', '-', [[:Explore<CR>]], { noremap = true, silent = true })
 
 if vim.fn.has('unix') then
-    vim.api.nvim_set_keymap('v', '<leader>cc', '"+y', {})
+    vim.keymap.set('v', '<leader>cc', require('osc52').copy_visual, {})
+    -- vim.api.nvim_set_keymap('v', '<leader>cc', '"+y', {})
 elseif vim.fn.has('macunix') then
     vim.api.nvim_set_keymap('v', '<leader>cc', '"*y', {})
 end
