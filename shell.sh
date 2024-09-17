@@ -20,10 +20,7 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS=--require-sha
-
-if [ -n "$ZELLIJ" ]; then
-    export SSH_AUTH_SOCK=$(find /tmp -type s -name "agent.*" -user $USER -print 2>/dev/null | head -n 1)
-fi
+export SSH_AUTH_SOCK=$(find /tmp -type s -name "agent.*" -user $USER -print 2>/dev/null | head -n 1)
 
 #go
 export GOPATH=$HOME/go
