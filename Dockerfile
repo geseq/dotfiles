@@ -20,8 +20,6 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y && \
     apt-add-repository -y "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
     apt update && apt install -y terraform
 
-RUN /home/dev/.cargo/bin/cargo install zellij
-
 RUN mkdir -p /home/dev/.vim/colors && \
     curl -o /home/dev/.vim/colors/PaperColor.vim https://raw.githubusercontent.com/NLKNguyen/papercolor-theme/master/colors/PaperColor.vim
 
