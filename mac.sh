@@ -345,19 +345,12 @@ brew install tmux
 brew install vim
 brew install yubikey-agent
 brew install terraform
-brew install clipper
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font font-fira-code
 
 brew services start yubikey-agent
-brew services start clipper
-
-wget https://github.com/zellij-org/zellij/releases/download/v0.27.0/zellij-aarch64-apple-darwin.tar.gz
-tar -xf zellij-aarch64-apple-darwin.tar.gz
-chmod +x zellij
-sudo mv zellij /usr/local/bin/
 
 export GNUPGHOME=~/.gnupg
 

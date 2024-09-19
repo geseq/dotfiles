@@ -30,7 +30,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
  
 cp ./.vimrc ~/
 cp ./.tmux.conf ~/
-cp ./.clipper.json ~/
 
 if [[ $machine == "Linux" ]]; then
     cp -r ./.config/* ~/.config
