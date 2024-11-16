@@ -347,7 +347,6 @@ brew install yubikey-agent
 brew install terraform
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font font-fira-code
 
 brew services start yubikey-agent
@@ -363,7 +362,7 @@ wget -O $GNUPGHOME/gpg.conf https://raw.githubusercontent.com/drduh/config/maste
 grep -ve "^#" $GNUPGHOME/gpg.conf
 
 wget -O $GNUPGHOME/gpg-agent.conf https://raw.githubusercontent.com/drduh/config/master/gpg-agent.conf
-grep -ve "^#" gpg-agent.conf
+grep -ve "^#" $GNUPGHOME/gpg-agent.conf
 
 mkdir -p $HOME/.ssh
 echo "Host *" > $HOME/.ssh/config
