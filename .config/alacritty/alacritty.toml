@@ -1,5 +1,3 @@
-use_thin_strokes = false
-
 [[keyboard.bindings]]
 chars = "\u001Ba"
 key = "A"
@@ -366,22 +364,22 @@ key = "Backslash"
 mods = "Alt|Shift"
 
 [font]
-size = 14.0
+size = 15.0
 
 [font.bold]
-family = "SourceCodePro"
+family = "Source Code Pro"
 style = "Bold"
 
 [font.bold_italic]
-family = "SourceCodePro"
+family = "Source Code Pro"
 style = "Bold Italic"
 
 [font.italic]
-family = "SourceCodePro"
+family = "Source Code Pro"
 style = "Italic"
 
 [font.normal]
-family = "SourceCodePro"
+family = "Source Code Pro"
 style = "Regular"
 
 [window]
