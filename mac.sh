@@ -366,7 +366,9 @@ grep -ve "^#" $GNUPGHOME/gpg-agent.conf
 
 mkdir -p $HOME/.ssh
 echo "Host *" > $HOME/.ssh/config
-echo "    IdentityAgent /usr/local/var/run/yubikey-agent.sock" >> $HOME/.ssh/config
+echo "    SetEnv TERM=vt100" >> $HOME/.ssh/config
+echo "    IdentityAgent $SSH_AUTH_SOCK" >> $HOME/.ssh/config
+echo "    VisualHostKey yes" >> $HOME/.ssh/config
 
 # Kill affected apps
 for app in "Dock" "Finder" "Safari"; do
