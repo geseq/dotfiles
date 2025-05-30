@@ -1,0 +1,39 @@
+[
+  {
+    "context": "Workspace",
+    "bindinys": {
+      "alt-y": "workspace::ActivatePaneLeft",
+      "alt-u": "workspace::ActivatePaneDown",
+      "alt-i": "workspace::ActivatePaneUp",
+      "alt-o": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-y": "workspace::ActivatePaneLeft",
+      "alt-u": "workspace::ActivatePaneDown",
+      "alt-i": "workspace::ActivatePaneUp",
+      "alt-o": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-y": "workspace::ActivatePaneLeft",
+      "alt-u": "workspace::ActivatePaneDown",
+      "alt-i": "workspace::ActivatePaneUp",
+      "alt-o": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "alt-y": "workspace::ActivatePaneLeft",
+      "alt-u": "workspace::ActivatePaneDown",
+      "alt-i": "workspace::ActivatePaneUp",
+      "alt-o": "workspace::ActivatePaneRight"
+    }
+  }
+]
+
